@@ -4,6 +4,9 @@ from utils.database import get_engineers_by_department
 from st_aggrid import AgGrid
 import pandas as pd
 from forms.boxbuild import render_boxbuild
+from utils.database import load_database
+from utils.pdf_import import read_pdf, parse_form
+
 
 st.set_page_config(layout="wide")
 
@@ -11,14 +14,12 @@ st.sidebar.title("Form Selection")
 
 form_type = st.sidebar.radio(
     "Select Form",
-    ["BoxBuild", "PCBA"]
+    ["BoxBuild"]
 )
 
 if form_type == "BoxBuild":
     render_boxbuild()
 
-elif form_type == "PCBA":
-    render_pcba()
 
 uploaded_pdf = st.file_uploader(
     "Import Existing Briefing Form",
@@ -62,10 +63,11 @@ departments = [
 ]
 
 pci = st.text_input("PCI FG P/N")
+initial = pci[:2].upper() if pci else ""
 
 if initial:
     table_rows = []
-    for dept in departements:
+    for dept in departments:
         engineer = get_engineers_by_department(df,initial,dept)
         engineer_list = engineer["ER"].tolist()
         table_rows.append({
@@ -90,7 +92,6 @@ if initial:
     
     attendance_result = grid_response["data"]
 
-initial = pci[:2].upper() if pci else ""
 
 st.markdown("---")
 
@@ -174,6 +175,7 @@ for dept in departments:
 
     with col8:
         st.checkbox("", key=f"{dept}_m4")
+
 
 
 
