@@ -1,8 +1,7 @@
 import pandas as pd
 
 def load_database():
-    df = pd.read_csv("engineer_database.csv")
-    return df
+    return pd.read_csv("engineer_database.csv")
 
 
 def get_customer_by_initial(df, initial):
@@ -14,10 +13,10 @@ def get_customer_by_initial(df, initial):
     return ""
 
 
-def get_engineers(df, initial, department):
-    filtered = df[
+def get_engineers_by_department(df, initial, department):
+    data = df[
         (df["Initial"] == initial) &
         (df["Department"] == department)
     ]
 
-    return filtered[["ER", "Email"]]
+    return data
