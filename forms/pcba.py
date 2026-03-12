@@ -1,1 +1,21 @@
-
+departments = [
+"Product Engineer",
+"Process Engineer (SMT)",
+"Process Engineer (Back End)",
+"Test Engineer (FCT)",
+"Test Engineer (ICT)",
+"Production Supervisor (SMT)",
+"Production Supervisor (Back End)",
+"QA Engineer",
+"QC Engineer (IPQC)",
+"QC Engineer (OQC)",
+"QC Engineer (IQC)",
+"Material Controller",
+"COB Engineer",
+"DFM Engineer",
+"Maintenance Engineer",
+"Test Development Engineer",
+"Program Manager",
+"Account Manager",
+"Demand Planner"
+]
