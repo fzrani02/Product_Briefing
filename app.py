@@ -1,6 +1,8 @@
 import streamlit as st
 from datetime import date
 from utils.database import get_engineers_by_department
+from st_aggrid import AgGrid
+import pandas as pd
 
 st.set_page_config(layout="wide")
 
@@ -31,6 +33,33 @@ departments = [
 ]
 
 pci = st.text_input("PCI FG P/N")
+
+if initial:
+    table_rows = []
+    for dept in departements:
+        engineer = get_engineers_by_department(df,initial,dept)
+        engineer_list = engineer["ER"].tolist()
+        table_rows.append({
+            "Department": dept,
+            "Name":"",
+            "Ext":"",
+            "Email":"",
+            "Mtg Date 1": "",
+            "Mtg Date 2": "",
+            "Mtg Date 3": "",
+            "Mtg Date 4": "",
+            "Engineer Options": engineer_list
+        })
+    attendance_df = pd.DataFrame(table_rows)
+    st.markdown("## Team Attendance")
+
+    grid_response = AgGrid(
+        attendance_df,
+        editable=True,
+        height=500
+    )
+    
+    attendance_result = grid_response["data"]
 
 initial = pci[:2].upper() if pci else ""
 
@@ -71,5 +100,6 @@ for dept in departments:
         key=f"{dept}_date"
     )
 
-    st.markdoen 
+
+
 
