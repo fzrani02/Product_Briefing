@@ -1,53 +1,50 @@
 import streamlit as st
 from datetime import date
-from utils.database import load_database, get_customer_by_initial
+from utils.database import *
 
-st.set_page_config(layout="wide")
-
-# Load database
 df = load_database()
 
-# HEADER
-col1, col2 = st.columns([1,4])
+st.markdown("## Team Attendance")
 
-with col1:
-    st.image("logo.png", width=120)
+departments = [
+    "Product Engineer",
+    "Process Engineer (SMT)"
+]
 
-with col2:
-    st.markdown(
-        "<h1 style='text-align:center;'>PRODUCT BUILD BRIEFING CHECKLIST</h1>",
-        unsafe_allow_html=True
+pci = st.text_input("PCI FG P/N")
+
+initial = pci[:2].upper() if pci else ""
+
+for dept in departments:
+
+    st.markdown(f"### {dept}")
+
+    engineers = get_engineers_by_department(df, initial, dept)
+
+    names = engineers["ER"].tolist()
+
+    selected = st.selectbox(
+        f"{dept} Engineer",
+        [""] + names,
+        key=dept
     )
 
-st.markdown("---")
+    email = ""
 
-# FORM
-c1, c2, c3 = st.columns(3)
+    if selected:
+        email = engineers[engineers["ER"] == selected]["Email"].iloc[0]
 
-with c1:
-    project_name = st.text_input("Project Name")
-    build_type = st.text_input("Build Type")
-    date_updated = st.date_input("Date Updated", value=date.today())
+    col1,col2,col3 = st.columns(3)
 
-with c2:
-    pci = st.text_input("PCI FG P/N")
+    with col1:
+        st.write("Engineer:", selected)
 
-    initial = pci[:2].upper() if pci else ""
+    with col2:
+        st.write("Email:", email)
 
-    customer = get_customer_by_initial(df, initial)
-
-    st.text_input("Customer", value=customer, disabled=True)
-
-    project_account = st.text_input("Project Account")
-
-with c3:
-    revision = st.text_input("Revision", value="00", disabled=True)
-
-    product_type = st.selectbox(
-        "Product Type",
-        ["Automotive", "Medical", "Military", "Consumer"]
-    )
-
-st.markdown("---")
-
-st.write("Next step: Team members table")
+    with col3:
+        mtg_date = st.date_input(
+            "Meeting Date",
+            value=date.today(),
+            key=dept+"_date"
+        )
