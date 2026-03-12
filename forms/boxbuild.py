@@ -3,8 +3,9 @@ import pandas as pd
 from components.header import render_header
 from components.project_form import render_project_form
 from components.team_table import render_team_table
+
 from datetime import date
-from utils.database import load_database, get_engineers_by_department
+from utils.database import load_database
 
 def render_boxbuild():
     render_header()
@@ -16,14 +17,20 @@ def render_boxbuild():
 
     st.title("Product Build Briefing Checklist - BoxBuild")
 
-    pci = st.text_input("PCI FG P/N")
+    pci = project_data.get("pci","")
 
     initial = pci[:2].upper() if pci else ""
 
     departments = [
         "Product Engineer",
-        "Process Engineer (SMT)"
+        "Process Engineer (SMT)",
+        "Quality Engineer",
+        "Test Engineer",
+        "Manufacturing Engineer"
     ]
+    
+    editable_col =1
+    render_team_table(df, initial, departments, editable_col)
 
     st.markdown("## Meeting Attendance")
 
