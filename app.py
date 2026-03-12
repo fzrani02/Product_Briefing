@@ -3,9 +3,24 @@ from datetime import date
 from utils.database import get_engineers_by_department
 from st_aggrid import AgGrid
 import pandas as pd
+from forms.boxbuild import render_boxbuild
+from forms.pcba import render_pcba
 
 st.set_page_config(layout="wide")
 
+st.sidebar.title("Form Selection")
+
+form_type = st.sidebar.radio(
+    "Choose Form",
+    ["BoxBuild", "PCBA"]
+)
+
+if form_type == "BoxBuild":
+    render_boxbuild()
+
+elif form_type == "PCBA":
+    render_pcba()
+    
 df = load_database()
 
 st.title("Team Attendance")
@@ -99,6 +114,7 @@ for dept in departments:
         value=date.today(),
         key=f"{dept}_date"
     )
+
 
 
 
