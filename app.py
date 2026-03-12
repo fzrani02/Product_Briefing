@@ -11,7 +11,7 @@ st.set_page_config(layout="wide")
 st.sidebar.title("Form Selection")
 
 form_type = st.sidebar.radio(
-    "Choose Form",
+    "Select Form",
     ["BoxBuild", "PCBA"]
 )
 
@@ -175,6 +175,7 @@ for dept in departments:
 
     with col8:
         st.checkbox("", key=f"{dept}_m4")
+
 
 
 
