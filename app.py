@@ -20,6 +20,21 @@ if form_type == "BoxBuild":
 
 elif form_type == "PCBA":
     render_pcba()
+
+uploaded_pdf = st.file_uploader(
+    "Import Existing Briefing Form",
+    type=["pdf"]
+)
+
+if uploaded_pdf:
+
+    text = read_pdf(uploaded_pdf)
+
+    parsed = parse_form(text)
+
+    project = parsed["project"]
+
+    st.text_input("Project Name", value=project)
     
 df = load_database()
 
@@ -160,6 +175,7 @@ for dept in departments:
 
     with col8:
         st.checkbox("", key=f"{dept}_m4")
+
 
 
 
