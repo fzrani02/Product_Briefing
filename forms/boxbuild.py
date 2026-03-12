@@ -11,9 +11,10 @@ def render_boxbuild():
     render_header()
     project_data = render_project_form()
     st.markdown("### Project Team Members")
+    df = load_database()
     render_team_table()
 
-    df = load_database()
+    
 
     st.title("Product Build Briefing Checklist - BoxBuild")
 
