@@ -1,9 +1,16 @@
 import streamlit as st
 import pandas as pd
+from components.header import render_header
+from components.project_form import render_project_form
+from components.team_table import render_team_table
 from datetime import date
 from utils.database import load_database, get_engineers_by_department
 
 def render_boxbuild():
+    render_header()
+    project_data = render_project_form()
+    st.markdown("### Project Team Members")
+    render_team_table()
 
     df = load_database()
 
