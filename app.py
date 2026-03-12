@@ -1,50 +1,75 @@
 import streamlit as st
 from datetime import date
-from utils.database import *
+from utils.database import get_engineers_by_department
+
+st.set_page_config(layout="wide")
 
 df = load_database()
 
-st.markdown("## Team Attendance")
+st.title("Team Attendance")
 
 departments = [
-    "Product Engineer",
-    "Process Engineer (SMT)"
+"Product Engineer",
+"Process Engineer (SMT)",
+"Department 3",
+"Department 4",
+"Department 5",
+"Department 6",
+"Department 7",
+"Department 8",
+"Department 9",
+"Department 10",
+"Department 11",
+"Department 12",
+"Department 13",
+"Department 14",
+"Department 15",
+"Department 16",
+"Department 17",
+"Department 18",
+"Department 19"
 ]
 
 pci = st.text_input("PCI FG P/N")
 
 initial = pci[:2].upper() if pci else ""
 
+st.markdown("---")
+
 for dept in departments:
-
-    st.markdown(f"### {dept}")
-
     engineers = get_engineers_by_department(df, initial, dept)
+    engineer_list = [""] + engineers["ER"].tolist()
 
-    names = engineers["ER"].tolist()
+    col1, col2, col3, col4 = st.columns([3,3,2,3])
 
-    selected = st.selectbox(
-        f"{dept} Engineer",
-        [""] + names,
-        key=dept
-    )
+    with col1:
+        st.write(dept)
+
+    with col2:
+        selected = st.selectbox(
+            "Engineer",
+            engineer_list,
+            key=f"{dept}_engineer"
+        )
 
     email = ""
 
     if selected:
         email = engineers[engineers["ER"] == selected]["Email"].iloc[0]
 
-    col1,col2,col3 = st.columns(3)
-
-    with col1:
-        st.write("Engineer:", selected)
-
-    with col2:
-        st.write("Email:", email)
-
     with col3:
-        mtg_date = st.date_input(
-            "Meeting Date",
-            value=date.today(),
-            key=dept+"_date"
+        st.text_input(
+            "Email",
+            value=email,
+            disabled=True,
+            key=f"{dept}_email"
         )
+
+    st.date_input(
+        "Meeting Date",
+        value=date.today(),
+        key=f"{dept}_date"
+    )
+
+    st.markdoen 
+
