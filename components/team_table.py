@@ -1,84 +1,74 @@
 import streamlit as st
-from datetime import date
+from utils.database import get_engineers_by_department
+
 
 def render_team_table(df, initial, departments, editable_col):
 
-        st.markdown("""
-        <table style="width:100%; border-collapse: collapse; text-align:center;">
-        <tr>
-            <th rowspan="2" style="border:1px solid black;">Department</th>
-            <th rowspan="2" style="border:1px solid black;">Name</th>
-            <th rowspan="2" style="border:1px solid black;">Ext. #</th>
-            <th rowspan="2" style="border:1px solid black;">Email</th>
-            <th colspan="4" style="border:1px solid black;">Attendances</th>
-        </tr>
-        <tr>
-            <th style="border:1px solid black;">Mtg Date</th>
-            <th style="border:1px solid black;">Mtg Date</th>
-            <th style="border:1px solid black;">Mtg Date</th>
-            <th style="border:1px solid black;">Mtg Date</th>
-        </tr>
-        </table>
-        """, unsafe_allow_html=True)
+    st.markdown("### PROJECT TEAM MEMBERS (PLANT)")
+
+    # header tabel
+    st.markdown("""
+    <table style="width:100%; border-collapse: collapse; text-align:center;">
+    <tr>
+        <th rowspan="2" style="border:1px solid black;">Department</th>
+        <th rowspan="2" style="border:1px solid black;">Name</th>
+        <th rowspan="2" style="border:1px solid black;">Ext. #</th>
+        <th rowspan="2" style="border:1px solid black;">Email</th>
+        <th colspan="4" style="border:1px solid black;">Attendances</th>
+    </tr>
+    <tr>
+        <th style="border:1px solid black;">Mtg</th>
+        <th style="border:1px solid black;">Mtg</th>
+        <th style="border:1px solid black;">Mtg</th>
+        <th style="border:1px solid black;">Mtg</th>
+    </tr>
+    </table>
+    """, unsafe_allow_html=True)
 
     attendance = []
 
     for dept in departments:
 
-        engineers = df[(df["Initial"] == initial) & (df["Department"] == dept)]
+        engineers = get_engineers_by_department(df, initial, dept)
 
-        names = [""] + engineers["ER"].tolist()
+        engineer_list = [""] + engineers["ER"].tolist()
 
-        col1,col2,col3,col4,col5,col6,col7,col8 = st.columns([3,3,1,3,1,1,1,1])
+        col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
 
         with col1:
             st.write(dept)
 
         with col2:
-            name = st.selectbox(
+            selected = st.selectbox(
                 "Engineer",
-                names,
-                key=dept+"_name",
-                label_visibility="collapsed"
+                engineer_list,
+                key=f"{dept}_engineer"
             )
 
-        email=""
+        email = ""
 
-        if name:
-            email = engineers[engineers["ER"] == name]["Email"].iloc[0]
+        if selected:
+            email = engineers[engineers["ER"] == selected]["Email"].iloc[0]
 
         with col3:
-            st.text_input("Ext", key=dept+"_ext", label_visibility="collapsed")
-
-        with col4:
             st.text_input(
                 "Email",
                 value=email,
-                key=dept+"_email",
-                label_visibility="collapsed",
-                disabled=True
+                disabled=True,
+                key=f"{dept}_email"
             )
 
-        mtg_values=[]
+        with col4:
+            st.text_input("Ext", key=f"{dept}_ext")
 
-        for i,col in enumerate([col5,col6,col7,col8], start=1):
+        with col5:
+            st.checkbox("", key=f"{dept}_m1")
 
-            with col:
+        with col6:
+            st.checkbox("", key=f"{dept}_m2")
 
-                mtg = st.checkbox(
-                    "",
-                    key=f"{dept}_mtg{i}",
-                    disabled = (i != editable_col)
-                )
+        with col7:
+            st.checkbox("", key=f"{dept}_m3")
 
-                mtg_values.append(mtg)
-
-        attendance.append({
-            "dept":dept,
-            "name":name,
-            "email":email,
-            "mtg":mtg_values
-        })
-
-    return attendance
-
+        with col8:
+            st.checkbox("", key=f"{dept}_m4")
