@@ -3,10 +3,10 @@ from utils.database import get_engineers_by_department
 
 def render_team_table(df, initial, departments, editable_col, attendance_data):
     st.markdown("""
-    
+    left, right = st.columns([3,2])
+
 
     # HEADER LAYOUT
-    left, right = st.columns([3,2])
     <style>
 
     div[data-testid="stCheckbox"] {
@@ -127,6 +127,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             }
             
             }
+
 
 
 
