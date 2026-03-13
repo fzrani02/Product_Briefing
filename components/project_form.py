@@ -40,10 +40,12 @@ def render_project_form():
     "pci": pci,
     "customer": customer,
     "initial": initial,
+    "email" : email,
     "project_account": project_account,
     "revision": revision,
     "product_type": product_type
   }
   
+
 
 
