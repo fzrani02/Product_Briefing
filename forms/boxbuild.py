@@ -18,6 +18,7 @@ def render_boxbuild():
         "Upload Previous Briefing PDF",
         type=["pdf"]
     )
+    st.markdown("---")
     project_data = render_project_form()
     st.markdown("---")
     df = load_database()
