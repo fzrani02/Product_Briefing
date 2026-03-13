@@ -20,8 +20,9 @@ def render_boxbuild():
     )
     
     st.markdown("---")
-    
+    st.write("TEST 1")
     project_data = render_project_form()
+    st.write("TEST 2")
     st.markdown("---")
     df = load_database()
     pci = project_data.get("pci","")
