@@ -9,6 +9,7 @@ from utils.database import load_database
 
 def render_boxbuild():
     render_header()
+    st.markdown("---")
     project_data = render_project_form()
     df = load_database()
     pci = project_data.get("pci","")
