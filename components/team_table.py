@@ -2,6 +2,14 @@ import streamlit as st
 from utils.database import get_engineers_by_department
 
 def render_team_table(df, initial, departments, editable_col):
+    st.markdown("""
+    <style>
+    div[data-testid="stCheckbox"] {
+        display:flex;
+        justify-content:center;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
     # HEADER LAYOUT
     left, right = st.columns([3,2])
@@ -20,16 +28,16 @@ def render_team_table(df, initial, departments, editable_col):
         col1,col2,col3,col4 = st.columns(4)
 
         with col1:
-            st.date_input("Mtg Date 1")
+            st.date_input("", key="mtg1")
 
         with col2:
-            st.date_input("Mtg Date 2")
+            st.date_input("", key="mtg2", disabled=True)
 
         with col3:
-            st.date_input("Mtg Date 3")
+            st.date_input("", key="mtg3",  disabled=True)
 
         with col4:
-            st.date_input("Mtg Date 4")
+            st.date_input("", key="mtg4",  disabled=True)
 
     st.markdown("---")
 
@@ -50,7 +58,7 @@ def render_team_table(df, initial, departments, editable_col):
 
             with col2:
                 selected = st.selectbox(
-                    "Engineer",
+                    "",
                     engineer_list,
                     key=f"{dept}_engineer"
                 )
@@ -60,11 +68,11 @@ def render_team_table(df, initial, departments, editable_col):
                 email = engineers[engineers["ER"] == selected]["Email"].iloc[0]
 
             with col3:
-                st.text_input("Ext", key=f"{dept}_ext")
+                st.text_input("", key=f"{dept}_ext")
 
             with col4:
                 st.text_input(
-                    "Email",
+                    "",
                     value=email,
                     disabled=True,
                     key=f"{dept}_email"
@@ -85,6 +93,7 @@ def render_team_table(df, initial, departments, editable_col):
 
             with col4:
                 st.checkbox("", key=f"{dept}_m4")
+
 
 
 
