@@ -1,0 +1,365 @@
+Initial,Customer,Department,ER,Email
+CG,COGNEX,Product Engineer,Aryu,aryu@gmail.com
+CG,COGNEX,Product Engineer,Farhan,farhan@gmail.com
+CG,COGNEX,Product Engineer,Jeremy,jeremy@gmail.com
+CG,COGNEX,Product Engineer,Jeje,jeje@gmail.com
+GE,GEA,Product Engineer,Mikhael,mikhael@gmail.com
+GE,GEA,Product Engineer,Fatih,fatih@gmail.com
+GE,GEA,Product Engineer,Sasa,sasa@gmail.com
+GE,GEA,Product Engineer,Miti,miti@gmail.com
+OR,ORBCOMM,Product Engineer,Lulu,lulu@gmail.com
+OR,ORBCOMM,Product Engineer,Kiki,kiki@gmail.com
+OR,ORBCOMM,Product Engineer,Jolan,jolan@gmail.com
+OR,ORBCOMM,Product Engineer,Didit,didit@gmail.com
+OR,ORBCOMM,Product Engineer,Noni,noni@gmail.com
+LF,LIFE FITNESS,Product Engineer,Kira,kira@gmail.com
+LF,LIFE FITNESS,Product Engineer,Juju,juju@gmail.com
+LF,LIFE FITNESS,Product Engineer,Koko,koko@gmail.com
+LF,LIFE FITNESS,Product Engineer,Wita,wita@gmail.com
+CG,COGNEX,Process Engineer (SMT),Arya,arya@gmail.com
+CG,COGNEX,Process Engineer (SMT),Farhana,farhana@gmail.com
+CG,COGNEX,Process Engineer (SMT),Jeremia,jeremia@gmail.com
+CG,COGNEX,Process Engineer (SMT),Jejea,jejea@gmail.com
+CG,COGNEX,Process Engineer (SMT),Mikhaela,mikhaela@gmail.com
+CG,COGNEX,Process Engineer (SMT),Fatiha,fatiha@gmail.com
+GE,GEA,Process Engineer (SMT),Misel,misel@gmail.com
+GE,GEA,Process Engineer (SMT),Poli,poli@gmail.com
+GE,GEA,Process Engineer (SMT),Kuki,kuki@gmail.com
+GE,GEA,Process Engineer (SMT),Jojon,jojon@gmail.com
+GE,GEA,Process Engineer (SMT),Hugo,hugo@gmail.com
+GE,GEA,Process Engineer (SMT),Goji,goji@gmail.com
+OR,ORBCOMM,Process Engineer (SMT),Roti,roti@gmail.com
+OR,ORBCOMM,Process Engineer (SMT),Fufu,fufu@gmail.com
+OR,ORBCOMM,Process Engineer (SMT),Bubu,bubu@gmail.com
+OR,ORBCOMM,Process Engineer (SMT),Sida,sida@gmail.com
+OR,ORBCOMM,Process Engineer (SMT),Saro,saro@gmail.com
+OR,ORBCOMM,Process Engineer (SMT),Wopi,wopi@gmail.com
+LF,LIFE FITNESS,Process Engineer (SMT),Lopi,lopi@gmail.com
+LF,LIFE FITNESS,Process Engineer (SMT),Lilo,lilo@gmail.com
+LF,LIFE FITNESS,Process Engineer (SMT),Mona,mona@gmail.com
+LF,LIFE FITNESS,Process Engineer (SMT),Luta,luta@gmail.com
+LF,LIFE FITNESS,Process Engineer (SMT),Jio,jio@gmail.com
+LF,LIFE FITNESS,Process Engineer (SMT),Hiko,hiko@gmail.com
+CG,COGNEX,Process Engineer (Back End),Smith,smith@gmail.com
+CG,COGNEX,Process Engineer (Back End),Jordan,jordan@gmail.com
+CG,COGNEX,Process Engineer (Back End),Brown,brown@gmail.com
+CG,COGNEX,Process Engineer (Back End),Jones,jones@gmail.com
+GE,GEA,Process Engineer (Back End),Miller,miller@gmail.com
+GE,GEA,Process Engineer (Back End),Davis,davis@gmail.com
+GE,GEA,Process Engineer (Back End),Garcia,garcia@gmail.com
+GE,GEA,Process Engineer (Back End),Wilson,wilson@gmail.com
+OR,ORBCOMM,Process Engineer (Back End),Taylor,taylor@gmail.com
+OR,ORBCOMM,Process Engineer (Back End),Clark,clark@gmail.com
+OR,ORBCOMM,Process Engineer (Back End),White,white@gmail.com
+OR,ORBCOMM,Process Engineer (Back End),Harris,harris@gmail.com
+OR,ORBCOMM,Process Engineer (Back End),Martin,martin@gmail.com
+LF,LIFE FITNESS,Process Engineer (Back End),Moore,moore@gmail.com
+LF,LIFE FITNESS,Process Engineer (Back End),Young,young@gmail.com
+LF,LIFE FITNESS,Process Engineer (Back End),King,king@gmail.com
+LF,LIFE FITNESS,Process Engineer (Back End),Wright,wright@gmail.com
+CG,COGNEX,Test Engineer (FCT),Scott,scott@gmail.com
+CG,COGNEX,Test Engineer (FCT),Green,green@gmail.com
+CG,COGNEX,Test Engineer (FCT),Baker,baker@gmail.com
+CG,COGNEX,Test Engineer (FCT),Adams,adams@gmail.com
+GE,GEA,Test Engineer (FCT),Nelson,nelson@gmail.com
+GE,GEA,Test Engineer (FCT),Hill,hill@gmail.com
+GE,GEA,Test Engineer (FCT),Allen,allen@gmail.com
+GE,GEA,Test Engineer (FCT),Hall,hall@gmail.com
+OR,ORBCOMM,Test Engineer (FCT),Lewis,lewis@gmail.com
+OR,ORBCOMM,Test Engineer (FCT),Lee,lee@gmail.com
+OR,ORBCOMM,Test Engineer (FCT),Walker,walker@gmail.com
+OR,ORBCOMM,Test Engineer (FCT),Hall,hall@gmail.com
+OR,ORBCOMM,Test Engineer (FCT),Young,young@gmail.com
+LF,LIFE FITNESS,Test Engineer (FCT),King,king@gmail.com
+LF,LIFE FITNESS,Test Engineer (FCT),Wright,wright@gmail.com
+LF,LIFE FITNESS,Test Engineer (FCT),Lopez,lopez@gmail.com
+LF,LIFE FITNESS,Test Engineer (FCT),Hill,hill@gmail.com
+CG,COGNEX,Test Engineer (ICT),Scott,scott@gmail.com
+CG,COGNEX,Test Engineer (ICT),Green,green@gmail.com
+CG,COGNEX,Test Engineer (ICT),Adams,adams@gmail.com
+CG,COGNEX,Test Engineer (ICT),Baker,baker@gmail.com
+GE,GEA,Test Engineer (ICT),Evans,evans@gmail.com
+GE,GEA,Test Engineer (ICT),Perez,perez@gmail.com
+GE,GEA,Test Engineer (ICT),Roberts,roberts@gmail.com
+GE,GEA,Test Engineer (ICT),Turner,turner@gmail.com
+OR,ORBCOMM,Test Engineer (ICT),Phillips,phillips@gmail.com
+OR,ORBCOMM,Test Engineer (ICT),Campbell,campbell@gmail.com
+OR,ORBCOMM,Test Engineer (ICT),Parker,parker@gmail.com
+OR,ORBCOMM,Test Engineer (ICT),Evans,evans@gmail.com
+OR,ORBCOMM,Test Engineer (ICT),Edwards,edwards@gmail.com
+LF,LIFE FITNESS,Test Engineer (ICT),Collins,collins@gmail.com
+LF,LIFE FITNESS,Test Engineer (ICT),Stewart,stewart@gmail.com
+LF,LIFE FITNESS,Test Engineer (ICT),Morris,morris@gmail.com
+LF,LIFE FITNESS,Test Engineer (ICT),Rogers,rogers@gmail.com
+CG,COGNEX,Production Supervisor (SMT),Ford,ford@gmail.com
+CG,COGNEX,Production Supervisor (SMT),Graham,graham@gmail.com
+CG,COGNEX,Production Supervisor (SMT),West,west@gmail.com
+CG,COGNEX,Production Supervisor (SMT),Cole,cole@gmail.com
+GE,GEA,Production Supervisor (SMT),Chase,chase@gmail.com
+GE,GEA,Production Supervisor (SMT),Stark,stark@gmail.com
+GE,GEA,Production Supervisor (SMT),Rhodes,rhodes@gmail.com
+GE,GEA,Production Supervisor (SMT),Beck,beck@gmail.com
+OR,ORBCOMM,Production Supervisor (SMT),Reed,reed@gmail.com
+OR,ORBCOMM,Production Supervisor (SMT),Knight,knight@gmail.com
+OR,ORBCOMM,Production Supervisor (SMT),Vance,vance@gmail.com
+OR,ORBCOMM,Production Supervisor (SMT),Holt,holt@gmail.com
+OR,ORBCOMM,Production Supervisor (SMT),Kent,kent@gmail.com
+LF,LIFE FITNESS,Production Supervisor (SMT),Dean,dean@gmail.com
+LF,LIFE FITNESS,Production Supervisor (SMT),Grant,grant@gmail.com
+LF,LIFE FITNESS,Production Supervisor (SMT),Ross,ross@gmail.com
+LF,LIFE FITNESS,Production Supervisor (SMT),Blair,blair@gmail.com
+CG,COGNEX,Production Supervisor (Back End),Miles,miles@gmail.com
+CG,COGNEX,Production Supervisor (Back End),Brooks,brooks@gmail.com
+CG,COGNEX,Production Supervisor (Back End),Hayes,hayes@gmail.com
+CG,COGNEX,Production Supervisor (Back End),Wells,wells@gmail.com
+GE,GEA,Production Supervisor (Back End),Frost,frost@gmail.com
+GE,GEA,Production Supervisor (Back End),Snow,snow@gmail.com
+GE,GEA,Production Supervisor (Back End),Storm,storm@gmail.com
+GE,GEA,Production Supervisor (Back End),Rain,rain@gmail.com
+OR,ORBCOMM,Production Supervisor (Back End),Sky,sky@gmail.com
+OR,ORBCOMM,Production Supervisor (Back End),Clay,clay@gmail.com
+OR,ORBCOMM,Production Supervisor (Back End),Wood,wood@gmail.com
+OR,ORBCOMM,Production Supervisor (Back End),Stone,stone@gmail.com
+OR,ORBCOMM,Production Supervisor (Back End),Wolfe,wolfe@gmail.com
+LF,LIFE FITNESS,Production Supervisor (Back End),Fox,fox@gmail.com
+LF,LIFE FITNESS,Production Supervisor (Back End),Bear,bear@gmail.com
+LF,LIFE FITNESS,Production Supervisor (Back End),Hawk,hawk@gmail.com
+LF,LIFE FITNESS,Production Supervisor (Back End),Colt,colt@gmail.com
+CG,COGNEX,QA Engineer,Duke,duke@gmail.com
+CG,COGNEX,QA Engineer,Earl,earl@gmail.com
+CG,COGNEX,QA Engineer,Barron,barron@gmail.com
+CG,COGNEX,QA Engineer,Bishop,bishop@gmail.com
+GE,GEA,QA Engineer,Abbot,abbot@gmail.com
+GE,GEA,QA Engineer,Prior,prior@gmail.com
+GE,GEA,QA Engineer,Page,page@gmail.com
+GE,GEA,QA Engineer,Ward,ward@gmail.com
+OR,ORBCOMM,QA Engineer,Guard,guard@gmail.com
+OR,ORBCOMM,QA Engineer,Archer,archer@gmail.com
+OR,ORBCOMM,QA Engineer,Hunter,hunter@gmail.com
+OR,ORBCOMM,QA Engineer,Fisher,fisher@gmail.com
+OR,ORBCOMM,QA Engineer,Weaver,weaver@gmail.com
+LF,LIFE FITNESS,QA Engineer,Potter,potter@gmail.com
+LF,LIFE FITNESS,QA Engineer,Tanner,tanner@gmail.com
+LF,LIFE FITNESS,QA Engineer,Cooper,cooper@gmail.com
+LF,LIFE FITNESS,QA Engineer,Mason,mason@gmail.com
+CG,COGNEX,QC Engineer (IPQC),Vance,vance@gmail.com
+CG,COGNEX,QC Engineer (IPQC),Pierce,pierce@gmail.com
+CG,COGNEX,QC Engineer (IPQC),Flynn,flynn@gmail.com
+CG,COGNEX,QC Engineer (IPQC),Reese,reese@gmail.com
+GE,GEA,QC Engineer (IPQC),Burke,burke@gmail.com
+GE,GEA,QC Engineer (IPQC),Nash,nash@gmail.com
+GE,GEA,QC Engineer (IPQC),Lane,lane@gmail.com
+GE,GEA,QC Engineer (IPQC),Blaine,blaine@gmail.com
+OR,ORBCOMM,QC Engineer (IPQC),Slate,slate@gmail.com
+OR,ORBCOMM,QC Engineer (IPQC),Drake,drake@gmail.com
+OR,ORBCOMM,QC Engineer (IPQC),Bryce,bryce@gmail.com
+OR,ORBCOMM,QC Engineer (IPQC),Craig,craig@gmail.com
+OR,ORBCOMM,QC Engineer (IPQC),Scott,scott@gmail.com
+LF,LIFE FITNESS,QC Engineer (IPQC),Mark,mark@gmail.com
+LF,LIFE FITNESS,QC Engineer (IPQC),Paul,paul@gmail.com
+LF,LIFE FITNESS,QC Engineer (IPQC),Luke,luke@gmail.com
+LF,LIFE FITNESS,QC Engineer (IPQC),John,john@gmail.com
+CG,COGNEX,QC Engineer (OQC),James,james@gmail.com
+CG,COGNEX,QC Engineer (OQC),Charles,charles@gmail.com
+CG,COGNEX,QC Engineer (OQC),George,george@gmail.com
+CG,COGNEX,QC Engineer (OQC),Frank,frank@gmail.com
+GE,GEA,QC Engineer (OQC),Carl,carl@gmail.com
+GE,GEA,QC Engineer (OQC),Kurt,kurt@gmail.com
+GE,GEA,QC Engineer (OQC),Kyle,kyle@gmail.com
+GE,GEA,QC Engineer (OQC),Sean,sean@gmail.com
+OR,ORBCOMM,QC Engineer (OQC),Seth,seth@gmail.com
+OR,ORBCOMM,QC Engineer (OQC),Shane,shane@gmail.com
+OR,ORBCOMM,QC Engineer (OQC),Wayne,wayne@gmail.com
+OR,ORBCOMM,QC Engineer (OQC),Blake,blake@gmail.com
+OR,ORBCOMM,QC Engineer (OQC),Drake,drake@gmail.com
+LF,LIFE FITNESS,QC Engineer (OQC),Beau,beau@gmail.com
+LF,LIFE FITNESS,QC Engineer (OQC),Saul,saul@gmail.com
+LF,LIFE FITNESS,QC Engineer (OQC),Joel,joel@gmail.com
+LF,LIFE FITNESS,QC Engineer (OQC),Noel,noel@gmail.com
+CG,COGNEX,QC Engineer (IQC),Neil,neil@gmail.com
+CG,COGNEX,QC Engineer (IQC),Dean,dean@gmail.com
+CG,COGNEX,QC Engineer (IQC),Glen,glen@gmail.com
+CG,COGNEX,QC Engineer (IQC),Dale,dale@gmail.com
+GE,GEA,QC Engineer (IQC),Lane,lane@gmail.com
+GE,GEA,QC Engineer (IQC),Case,case@gmail.com
+GE,GEA,QC Engineer (IQC),Chance,chance@gmail.com
+GE,GEA,QC Engineer (IQC),Chase,chase@gmail.com
+OR,ORBCOMM,QC Engineer (IQC),Creed,creed@gmail.com
+OR,ORBCOMM,QC Engineer (IQC),Cruz,cruz@gmail.com
+OR,ORBCOMM,QC Engineer (IQC),Gage,gage@gmail.com
+OR,ORBCOMM,QC Engineer (IQC),Hugh,hugh@gmail.com
+OR,ORBCOMM,QC Engineer (IQC),Keith,keith@gmail.com
+LF,LIFE FITNESS,QC Engineer (IQC),Quinn,quinn@gmail.com
+LF,LIFE FITNESS,QC Engineer (IQC),Rhys,rhys@gmail.com
+LF,LIFE FITNESS,QC Engineer (IQC),Vaughn,vaughn@gmail.com
+LF,LIFE FITNESS,QC Engineer (IQC),Sloan,sloan@gmail.com
+CG,COGNEX,Material Controller,Wade,wade@gmail.com
+CG,COGNEX,Material Controller,Heath,heath@gmail.com
+CG,COGNEX,Material Controller,Blaise,blaise@gmail.com
+CG,COGNEX,Material Controller,Brock,brock@gmail.com
+GE,GEA,Material Controller,Dash,dash@gmail.com
+GE,GEA,Material Controller,Jace,jace@gmail.com
+GE,GEA,Material Controller,Zane,zane@gmail.com
+GE,GEA,Material Controller,Cade,cade@gmail.com
+OR,ORBCOMM,Material Controller,Jude,jude@gmail.com
+OR,ORBCOMM,Material Controller,Finn,finn@gmail.com
+OR,ORBCOMM,Material Controller,Kai,kai@gmail.com
+OR,ORBCOMM,Material Controller,Dax,dax@gmail.com
+OR,ORBCOMM,Material Controller,Rex,rex@gmail.com
+LF,LIFE FITNESS,Material Controller,Max,max@gmail.com
+LF,LIFE FITNESS,Material Controller,Lex,lex@gmail.com
+LF,LIFE FITNESS,Material Controller,Ray,ray@gmail.com
+LF,LIFE FITNESS,Material Controller,Jay,jay@gmail.com
+CG,COGNEX,COB Engineer,Guy,guy@gmail.com
+CG,COGNEX,COB Engineer,Roy,roy@gmail.com
+CG,COGNEX,COB Engineer,Troy,troy@gmail.com
+CG,COGNEX,COB Engineer,Boyd,boyd@gmail.com
+GE,GEA,COB Engineer,Floyd,floyd@gmail.com
+GE,GEA,COB Engineer,Lloyd,lloyd@gmail.com
+GE,GEA,COB Engineer,Rhett,rhett@gmail.com
+GE,GEA,COB Engineer,Brett,brett@gmail.com
+OR,ORBCOMM,COB Engineer,Trent,trent@gmail.com
+OR,ORBCOMM,COB Engineer,Brent,brent@gmail.com
+OR,ORBCOMM,COB Engineer,Grant,grant@gmail.com
+OR,ORBCOMM,COB Engineer,Clint,clint@gmail.com
+OR,ORBCOMM,COB Engineer,Kurt,kurt@gmail.com
+LF,LIFE FITNESS,COB Engineer,Karl,karl@gmail.com
+LF,LIFE FITNESS,COB Engineer,Dirk,dirk@gmail.com
+LF,LIFE FITNESS,COB Engineer,Hans,hans@gmail.com
+LF,LIFE FITNESS,COB Engineer,Lars,lars@gmail.com
+CG,COGNEX,DFM Engineer,Sven,sven@gmail.com
+CG,COGNEX,DFM Engineer,Bjorn,bjorn@gmail.com
+CG,COGNEX,DFM Engineer,Leif,leif@gmail.com
+CG,COGNEX,DFM Engineer,Erik,erik@gmail.com
+GE,GEA,DFM Engineer,Axel,axel@gmail.com
+GE,GEA,DFM Engineer,Otto,otto@gmail.com
+GE,GEA,DFM Engineer,Hugo,hugo@gmail.com
+GE,GEA,DFM Engineer,Igor,igor@gmail.com
+OR,ORBCOMM,DFM Engineer,Ivan,ivan@gmail.com
+OR,ORBCOMM,DFM Engineer,Yuri,yuri@gmail.com
+OR,ORBCOMM,DFM Engineer,Omar,omar@gmail.com
+OR,ORBCOMM,DFM Engineer,Amir,amir@gmail.com
+OR,ORBCOMM,DFM Engineer,Zaid,zaid@gmail.com
+LF,LIFE FITNESS,DFM Engineer,Finn,finn@gmail.com
+LF,LIFE FITNESS,DFM Engineer,Reid,reid@gmail.com
+LF,LIFE FITNESS,DFM Engineer,Tate,tate@gmail.com
+LF,LIFE FITNESS,DFM Engineer,Knox,knox@gmail.com
+CG,COGNEX,Maintenance Engineer,Cliff,cliff@gmail.com
+CG,COGNEX,Maintenance Engineer,Steel,steel@gmail.com
+CG,COGNEX,Maintenance Engineer,Stone,stone@gmail.com
+CG,COGNEX,Maintenance Engineer,Flint,flint@gmail.com
+GE,GEA,Maintenance Engineer,Wilder,wilder@gmail.com
+GE,GEA,Maintenance Engineer,Sterling,sterling@gmail.com
+GE,GEA,Maintenance Engineer,Brooks,brooks@gmail.com
+GE,GEA,Maintenance Engineer,Banks,banks@gmail.com
+OR,ORBCOMM,Maintenance Engineer,Rhodes,rhodes@gmail.com
+OR,ORBCOMM,Maintenance Engineer,Foster,foster@gmail.com
+OR,ORBCOMM,Maintenance Engineer,Parker,parker@gmail.com
+OR,ORBCOMM,Maintenance Engineer,Cooper,cooper@gmail.com
+OR,ORBCOMM,Maintenance Engineer,Hunter,hunter@gmail.com
+LF,LIFE FITNESS,Maintenance Engineer,Archer,archer@gmail.com
+LF,LIFE FITNESS,Maintenance Engineer,Sawyer,sawyer@gmail.com
+LF,LIFE FITNESS,Maintenance Engineer,Walker,walker@gmail.com
+LF,LIFE FITNESS,Maintenance Engineer,Fletcher,fletcher@gmail.com
+CG,COGNEX,Test Development Engineer,Carter,carter@gmail.com
+CG,COGNEX,Test Development Engineer,Mason,mason@gmail.com
+CG,COGNEX,Test Development Engineer,Porter,porter@gmail.com
+CG,COGNEX,Test Development Engineer,Thatcher,thatcher@gmail.com
+GE,GEA,Test Development Engineer,Weaver,weaver@gmail.com
+GE,GEA,Test Development Engineer,Miller,miller@gmail.com
+GE,GEA,Test Development Engineer,Tanner,tanner@gmail.com
+GE,GEA,Test Development Engineer,Ryder,ryder@gmail.com
+OR,ORBCOMM,Test Development Engineer,Skyler,skyler@gmail.com
+OR,ORBCOMM,Test Development Engineer,River,river@gmail.com
+OR,ORBCOMM,Test Development Engineer,Forest,forest@gmail.com
+OR,ORBCOMM,Test Development Engineer,Ridge,ridge@gmail.com
+OR,ORBCOMM,Test Development Engineer,Park,park@gmail.com
+LF,LIFE FITNESS,Test Development Engineer,Field,field@gmail.com
+LF,LIFE FITNESS,Test Development Engineer,Marsh,marsh@gmail.com
+LF,LIFE FITNESS,Test Development Engineer,Lake,lake@gmail.com
+LF,LIFE FITNESS,Test Development Engineer,Ocean,ocean@gmail.com
+CG,COGNEX,Program Manager,Silver,silver@gmail.com
+CG,COGNEX,Program Manager,Gold,gold@gmail.com
+CG,COGNEX,Program Manager,Iron,iron@gmail.com
+CG,COGNEX,Program Manager,Copper,copper@gmail.com
+GE,GEA,Program Manager,Steel,steel@gmail.com
+GE,GEA,Program Manager,Bronze,bronze@gmail.com
+GE,GEA,Program Manager,Titan,titan@gmail.com
+GE,GEA,Program Manager,Atlas,atlas@gmail.com
+OR,ORBCOMM,Program Manager,Orion,orion@gmail.com
+OR,ORBCOMM,Program Manager,Phoenix,phoenix@gmail.com
+OR,ORBCOMM,Program Manager,Griffin,griffin@gmail.com
+OR,ORBCOMM,Program Manager,Drake,drake@gmail.com
+OR,ORBCOMM,Program Manager,Falcon,falcon@gmail.com
+LF,LIFE FITNESS,Program Manager,Raven,raven@gmail.com
+LF,LIFE FITNESS,Program Manager,Wolf,wolf@gmail.com
+LF,LIFE FITNESS,Program Manager,Lynx,lynx@gmail.com
+LF,LIFE FITNESS,Program Manager,Blaze,blaze@gmail.com
+CG,COGNEX,Account Manager,Kirara,kirara@gmail.com
+CG,COGNEX,Account Manager,Hikaru,hikaru@gmail.com
+CG,COGNEX,Account Manager,Yuki,yuki@gmail.com
+CG,COGNEX,Account Manager,Ren,ren@gmail.com
+GE,GEA,Account Manager,Haru,haru@gmail.com
+GE,GEA,Account Manager,Sora,sora@gmail.com
+GE,GEA,Account Manager,Aoi,aoi@gmail.com
+GE,GEA,Account Manager,Kaito,kaito@gmail.com
+OR,ORBCOMM,Account Manager,Akira,akira@gmail.com
+OR,ORBCOMM,Account Manager,Mio,mio@gmail.com
+OR,ORBCOMM,Account Manager,Rin,rin@gmail.com
+OR,ORBCOMM,Account Manager,Kenta,kenta@gmail.com
+OR,ORBCOMM,Account Manager,Nami,nami@gmail.com
+LF,LIFE FITNESS,Account Manager,Tsubasa,tsubasa@gmail.com
+LF,LIFE FITNESS,Account Manager,Yumi,yumi@gmail.com
+LF,LIFE FITNESS,Account Manager,Shino,shino@gmail.com
+LF,LIFE FITNESS,Account Manager,Kei,kei@gmail.com
+CG,COGNEX,Demand Planner,Maki,maki@gmail.com
+CG,COGNEX,Demand Planner,Taro,taro@gmail.com
+CG,COGNEX,Demand Planner,Hana,hana@gmail.com
+CG,COGNEX,Demand Planner,Kenji,kenji@gmail.com
+GE,GEA,Demand Planner,Riku,riku@gmail.com
+GE,GEA,Demand Planner,Nana,nana@gmail.com
+GE,GEA,Demand Planner,Asuka,asuka@gmail.com
+GE,GEA,Demand Planner,Yuto,yuto@gmail.com
+OR,ORBCOMM,Demand Planner,Saki,saki@gmail.com
+OR,ORBCOMM,Demand Planner,Hiro,hiro@gmail.com
+OR,ORBCOMM,Demand Planner,Emi,emi@gmail.com
+OR,ORBCOMM,Demand Planner,Takumi,takumi@gmail.com
+OR,ORBCOMM,Demand Planner,Rei,rei@gmail.com
+LF,LIFE FITNESS,Demand Planner,Misaki,misaki@gmail.com
+LF,LIFE FITNESS,Demand Planner,Sho,sho@gmail.com
+LF,LIFE FITNESS,Demand Planner,Ayaka,ayaka@gmail.com
+LF,LIFE FITNESS,Demand Planner,Ryosuke,ryosuke@gmail.com
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
