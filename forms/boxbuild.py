@@ -17,7 +17,7 @@ def render_boxbuild():
     st.markdown("---")
     df = load_database()
     pci = project_data.get("pci","")
-    initial = pci[:2].upper() if pci else ""
+    initial = project_data["initial"]
     departments = [
         "Product Engineer",
         "Process Engineer (SMT)",
