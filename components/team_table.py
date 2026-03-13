@@ -41,16 +41,16 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
         col1,col2,col3,col4 = st.columns(4)
 
         with col1:
-            st.date_input(key="mtg1", disabled=editable_col != 1)
+            st.date_input("", key="mtg1", disabled=editable_col != 1, label_visibility="collapsed")
 
         with col2:
-            st.date_input(key="mtg2", disabled=editable_col != 2)
+            st.date_input("", key="mtg2", disabled=editable_col != 2, label_visibility="collapsed")
 
         with col3:
-            st.date_input(key="mtg3", disabled=editable_col != 3)
+            st.date_input("", key="mtg3", disabled=editable_col != 3, label_visibility="collapsed")
 
         with col4:
-            st.date_input(key="mtg4", disabled=editable_col != 4)
+            st.date_input("", key="mtg4", disabled=editable_col != 4, label_visibility="collapsed")
 
     st.markdown("---")
 
@@ -122,6 +122,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             with col4:
                 checked = attendance_data.get(dept, {}).get("m4", False)
                 st.checkbox("", value=checked, key=f"{dept}_m4", disabled=editable_col != 4)
+
 
 
 
