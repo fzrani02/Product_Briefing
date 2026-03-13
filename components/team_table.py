@@ -2,11 +2,9 @@ import streamlit as st
 from utils.database import get_engineers_by_department
 
 def render_team_table(df, initial, departments, editable_col, attendance_data):
+
+    # CSS
     st.markdown("""
-    left, right = st.columns([3,2])
-
-
-    # HEADER LAYOUT
     <style>
 
     div[data-testid="stCheckbox"] {
@@ -24,9 +22,13 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
 
     </style>
     """, unsafe_allow_html=True)
-    
+
+    # HEADER
+    left, right = st.columns([3,2])
+
     with left:
         st.markdown("### PROJECT TEAM MEMBERS (PLANTS)")
+
         col1,col2,col3,col4 = st.columns([3,3,2,3])
         col1.markdown("**Department**")
         col2.markdown("**Name**")
@@ -45,10 +47,10 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             st.date_input("", key="mtg2", disabled=editable_col != 2)
 
         with col3:
-            st.date_input("", key="mtg3",  disabled=editable_col != 3)
+            st.date_input("", key="mtg3", disabled=editable_col != 3)
 
         with col4:
-            st.date_input("", key="mtg4",  disabled=editable_col != 4)
+            st.date_input("", key="mtg4", disabled=editable_col != 4)
 
     st.markdown("---")
 
@@ -71,7 +73,8 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
                 selected = st.selectbox(
                     "",
                     engineer_list,
-                    key=f"{dept}_engineer"
+                    key=f"{dept}_engineer",
+                    label_visibility="collapsed"
                 )
 
             email = ""
@@ -79,20 +82,24 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
                 email = engineers[engineers["ER"] == selected]["Email"].iloc[0]
 
             with col3:
-                st.text_input("", key=f"{dept}_ext")
+                st.text_input(
+                    "",
+                    key=f"{dept}_ext",
+                    label_visibility="collapsed"
+                )
 
             with col4:
                 st.text_input(
                     "",
                     value=email,
                     disabled=True,
-                    key=f"{dept}_email"
+                    key=f"{dept}_email",
+                    label_visibility="collapsed"
                 )
 
         with right:
 
             col1,col2,col3,col4 = st.columns(4)
-            
 
             with col1:
                 checked = attendance_data.get(dept, {}).get("m1", False)
@@ -108,35 +115,4 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
 
             with col4:
                 checked = attendance_data.get(dept, {}).get("m4", False)
-                st.checkbox("", value=checked,  key=f"{dept}_m4", disabled=editable_col != 4)
-
-            attendance_data = {
-
-            "Product Engineer": {
-                "m1": True,
-                "m2": False,
-                "m3": False,
-                "m4": False
-            },
-            
-            "Process Engineer (SMT)": {
-                "m1": True,
-                "m2": True,
-                "m3": False,
-                "m4": False
-            }
-            
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
+                st.checkbox("", value=checked, key=f"{dept}_m4", disabled=editable_col != 4)
