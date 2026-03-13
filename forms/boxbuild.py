@@ -10,13 +10,14 @@ from utils.pdf_import import read_pdf, parse_form
 from datetime import date
 from utils.database import load_database
 
-uploaded_pdf = st.file_uploader(
+
+def render_boxbuild():
+    render_header()
+        
+    uploaded_pdf = st.file_uploader(
         "Upload Previous Briefing PDF",
         type=["pdf"]
     )
-def render_boxbuild():
-    render_header()
-    
     project_data = render_project_form()
     st.markdown("---")
     df = load_database()
