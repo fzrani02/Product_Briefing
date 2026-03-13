@@ -10,8 +10,20 @@ def render_project_form():
     date_updated = st.date_input("Date Updated", value=date.today())
 
   with col2:
+    customer_map = {
+      "GE": "GEA",
+      "PH": "Philips",
+      "SI": "Siemens",
+      "BO": "Bosch",
+    }
     pci = st.text_input("PCI FG P/N")
-    customer = st.text_input("Customer", disabled=True)
+    initial = pci[:2].upper() if pci else ""
+
+    customer_auto = customer_map.get(initial, "")
+
+    
+    
+    customer = st.text_input("Customer", value=customer_auto)
     project_account = st.text_input("Project Account")
 
   with col3:
@@ -32,3 +44,4 @@ def render_project_form():
     "product_type": product_type
   }
   
+
