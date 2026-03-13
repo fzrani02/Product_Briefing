@@ -12,16 +12,8 @@ def render_boxbuild():
     project_data = render_project_form()
     st.markdown("### Project Team Members")
     df = load_database()
-    render_team_table()
-
-    
-
-    st.title("Product Build Briefing Checklist - BoxBuild")
-
     pci = project_data.get("pci","")
-
     initial = pci[:2].upper() if pci else ""
-
     departments = [
         "Product Engineer",
         "Process Engineer (SMT)",
@@ -29,9 +21,13 @@ def render_boxbuild():
         "Test Engineer",
         "Manufacturing Engineer"
     ]
-    
+
     editable_col =1
     render_team_table(df, initial, departments, editable_col)
+
+
+    st.title("Product Build Briefing Checklist - BoxBuild")
+
 
     st.markdown("## Meeting Attendance")
 
