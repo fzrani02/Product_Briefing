@@ -4,6 +4,7 @@ from components.header import render_header
 from components.project_form import render_project_form
 
 from components.team_table import render_team_table
+from components.items_to_check import render_items_to_check
 from utils.revision_logic import get_editable_column
 from utils.pdf_import import read_pdf, parse_form
 
@@ -103,4 +104,7 @@ def render_boxbuild():
         "PROJECT TEAM MEMBERS (PCIS)",
         "pcis"
     )
+
+    st.markdown("---")
+    render_items_to_check(df)
     
