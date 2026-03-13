@@ -10,6 +10,13 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
     }
     </style>
     """, unsafe_allow_html=True)
+    st.markdown("""
+    <style>
+    .stTextInput, .stSelectbox {
+        margin-top: -5px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
     # HEADER LAYOUT
     left, right = st.columns([3,2])
@@ -116,6 +123,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             }
             
             }
+
 
 
 
