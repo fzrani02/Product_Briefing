@@ -1,7 +1,7 @@
 import streamlit as st
 from utils.database import get_engineers_by_department
 
-def render_team_table(df, initial, departments, editable_col, attendance_data):
+def render_team_table(df, initial, departments, editable_col, attendance_data, title):
 
     # CSS
     st.markdown("""
@@ -35,7 +35,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
     left, right = st.columns([3,2])
 
     with left:
-        st.markdown("### PROJECT TEAM MEMBERS (PLANTS)")
+        st.markdown(f"###{title}")
 
         col1,col2,col3,col4 = st.columns([3,3,2,3])
         col1.markdown("**Department**")
@@ -132,6 +132,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             with col4:
                 checked = attendance_data.get(dept, {}).get("m4", False)
                 st.checkbox("", value=checked, key=f"{dept}_m4", disabled=editable_col != 4)
+
 
 
 
