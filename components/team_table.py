@@ -42,22 +42,22 @@ def render_team_table(df, initial, departments, editable_col):
                 engineer_list,
                 key=f"{dept}_er"
             )
+            
+        with col3:
+            st.text_input("Ext", key=f"{dept}_ext")
 
         email = ""
 
         if selected:
             email = engineers[engineers["ER"] == selected]["Email"].iloc[0]
 
-        with col3:
+        with col4:
             st.text_input(
                 "Email",
                 value=email,
                 disabled=True,
                 key=f"{dept}_email"
             )
-
-        with col4:
-            st.text_input("Ext", key=f"{dept}_ext")
 
         with col5:
             st.checkbox("", key=f"{dept}_m1")
@@ -70,5 +70,6 @@ def render_team_table(df, initial, departments, editable_col):
 
         with col8:
             st.checkbox("", key=f"{dept}_m4")
+
 
 
