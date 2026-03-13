@@ -1,7 +1,7 @@
 import streamlit as st
 from utils.database import get_engineers_by_department
 
-def render_team_table(df, initial, departments, editable_col):
+def render_team_table(df, initial, departments, editable_col, attendance_data):
     st.markdown("""
     <style>
     div[data-testid="stCheckbox"] {
@@ -81,18 +81,42 @@ def render_team_table(df, initial, departments, editable_col):
         with right:
 
             col1,col2,col3,col4 = st.columns(4)
+            
 
             with col1:
-                st.checkbox("",key=f"{dept}_m1", disabled=editable_col != 1)
+                checked = attendance_data.get(dept, {}).get("m1", False)
+                st.checkbox("", value=checked, key=f"{dept}_m1", disabled=editable_col != 1)
 
             with col2:
-                st.checkbox("", key=f"{dept}_m2", disabled=editable_col != 2)
+                checked = attendance_data.get(dept, {}).get("m2", False)
+                st.checkbox("", value=checked, key=f"{dept}_m2", disabled=editable_col != 2)
 
             with col3:
-                st.checkbox("", key=f"{dept}_m3", disabled=editable_col != 3)
+                checked = attendance_data.get(dept, {}).get("m3", False)
+                st.checkbox("", value=checked, key=f"{dept}_m3", disabled=editable_col != 3)
 
             with col4:
-                st.checkbox("", key=f"{dept}_m4", disabled=editable_col != 4)
+                checked = attendance_data.get(dept, {}).get("m4", False)
+                st.checkbox("", value=checked,  key=f"{dept}_m4", disabled=editable_col != 4)
+
+            attendance_data = {
+
+            "Product Engineer": {
+                "m1": True,
+                "m2": False,
+                "m3": False,
+                "m4": False
+            },
+            
+            "Process Engineer (SMT)": {
+                "m1": True,
+                "m2": True,
+                "m3": False,
+                "m4": False
+            }
+            
+            }
+
 
 
 
