@@ -10,7 +10,7 @@ from utils.database import load_database
 def render_boxbuild():
     render_header()
     project_data = render_project_form()
-    st.markdown("### Project Team Members")
+    st.markdown("### Project Team Members (Plants)")
     df = load_database()
     pci = project_data.get("pci","")
     initial = pci[:2].upper() if pci else ""
