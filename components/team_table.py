@@ -4,8 +4,6 @@ from utils.database import get_engineers_by_department
 
 def render_team_table(df, initial, departments, editable_col):
 
-    st.markdown("### PROJECT TEAM MEMBERS (PLANT)")
-
     # header tabel
     st.markdown("""
     <table style="width:100%; border-collapse: collapse; text-align:center;">
@@ -72,4 +70,5 @@ def render_team_table(df, initial, departments, editable_col):
 
         with col8:
             st.checkbox("", key=f"{dept}_m4")
+
 
