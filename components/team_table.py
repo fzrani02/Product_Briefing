@@ -16,7 +16,7 @@ def render_team_table(df, initial, departments, editable_col):
         col4.markdown("**Email**")
 
     with right:
-        st.markdown("### Meeting Attendance")
+        st.markdown("### Attendances")
 
         col1,col2,col3,col4 = st.columns(4)
 
@@ -86,3 +86,4 @@ def render_team_table(df, initial, departments, editable_col):
 
             with col4:
                 st.checkbox("", key=f"{dept}_m4")
+
