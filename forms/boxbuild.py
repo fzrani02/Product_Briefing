@@ -35,24 +35,3 @@ def render_boxbuild():
     editable_col =1
     render_team_table(df, initial, departments, editable_col)
 
-
-    st.title("Product Build Briefing Checklist - BoxBuild")
-
-
-    st.markdown("## Meeting Attendance")
-
-    col1,col2,col3,col4 = st.columns(4)
-
-    with col1:
-        mtg1 = st.date_input("Mtg Date 1")
-
-    with col2:
-        mtg2 = st.date_input("Mtg Date 2")
-
-    with col3:
-        mtg3 = st.date_input("Mtg Date 3")
-
-    with col4:
-        mtg4 = st.date_input("Mtg Date 4")
-
-    st.markdown("---")
