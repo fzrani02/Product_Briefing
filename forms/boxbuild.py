@@ -87,7 +87,8 @@ def render_boxbuild():
         initial,
         departments,
         editable_col,
-        attendance_data
+        attendance_data,
+        "PROJECT TEAM MEMBERS (PLANTS)"
     )
     
     st.markdown("---")
@@ -97,6 +98,7 @@ def render_boxbuild():
         initial,
         pcis_departments,
         editable_col,
-        attendance_data
+        attendance_data,
+        "PROJECT TEAM MEMBERS (PCIS)"
     )
     
