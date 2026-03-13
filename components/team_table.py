@@ -77,11 +77,16 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
                     label_visibility="collapsed"
                 )
 
+            email_key = f"{dept}_email"
+            
             email = ""
-            if selected :
+            
+            if selected:
                 email = engineers.loc[
                     engineers["ER"] == selected, "Email"
                 ].values[0]
+
+            st.session_state[email_key] = email
 
             with col3:
                 st.text_input(
@@ -93,9 +98,8 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             with col4:
                 st.text_input(
                     "",
-                    value=email,
+                    key=email_key,
                     disabled=True,
-                    key=f"{dept}_email",
                     label_visibility="collapsed"
                 )
 
@@ -118,6 +122,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             with col4:
                 checked = attendance_data.get(dept, {}).get("m4", False)
                 st.checkbox("", value=checked, key=f"{dept}_m4", disabled=editable_col != 4)
+
 
 
 
