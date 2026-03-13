@@ -39,9 +39,11 @@ def render_project_form():
     "data_updated": date_updated, 
     "pci": pci,
     "customer": customer,
+    "initial": initial,
     "project_account": project_account,
     "revision": revision,
     "product_type": product_type
   }
   
+
 
