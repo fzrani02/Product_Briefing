@@ -3,7 +3,7 @@ from utils.database import get_engineers_by_department
 
 def render_team_table(df, initial, departments, editable_col):
 
-    st.markdown("## Project Team Members")
+    st.markdown("## PROJECT TEAM MEMBERS (PLANTS)")
 
     # HEADER LAYOUT
     left, right = st.columns([3,2])
@@ -16,7 +16,7 @@ def render_team_table(df, initial, departments, editable_col):
         col4.markdown("**Email**")
 
     with right:
-        st.markdown("### Attendances")
+        st.markdown("### ATTENDANCES")
 
         col1,col2,col3,col4 = st.columns(4)
 
@@ -86,4 +86,5 @@ def render_team_table(df, initial, departments, editable_col):
 
             with col4:
                 st.checkbox("", key=f"{dept}_m4")
+
 
