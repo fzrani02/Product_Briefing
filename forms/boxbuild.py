@@ -100,7 +100,7 @@ def render_boxbuild():
         pcis_departments,
         editable_col,
         attendance_data,
-        "PROJECT TEAM MEMBERS (PCIS)".
+        "PROJECT TEAM MEMBERS (PCIS)",
         "pcis"
     )
     
