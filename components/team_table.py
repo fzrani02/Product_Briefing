@@ -78,7 +78,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
                 )
 
             email = ""
-            if selected and not engineers.empty:
+            if selected :
                 email = engineers.loc[
                     engineers["ER"] == selected, "Email"
                 ].values[0]
@@ -118,5 +118,6 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             with col4:
                 checked = attendance_data.get(dept, {}).get("m4", False)
                 st.checkbox("", value=checked, key=f"{dept}_m4", disabled=editable_col != 4)
+
 
 
