@@ -3,24 +3,28 @@ from utils.database import get_engineers_by_department
 
 def render_team_table(df, initial, departments, editable_col, attendance_data):
     st.markdown("""
+    
+
+    # HEADER LAYOUT
+    left, right = st.columns([3,2])
     <style>
+
     div[data-testid="stCheckbox"] {
         display:flex;
         justify-content:center;
     }
-    </style>
-    """, unsafe_allow_html=True)
-    st.markdown("""
-    <style>
-    .stTextInput, .stSelectbox {
-        margin-top: -5px;
+
+    div[data-testid="stTextInput"] {
+        margin-top:-5px;
     }
+
+    div[data-testid="stSelectbox"] {
+        margin-top:-5px;
+    }
+
     </style>
     """, unsafe_allow_html=True)
-
-    # HEADER LAYOUT
-    left, right = st.columns([3,2])
-
+    
     with left:
         st.markdown("### PROJECT TEAM MEMBERS (PLANTS)")
         col1,col2,col3,col4 = st.columns([3,3,2,3])
@@ -123,6 +127,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             }
             
             }
+
 
 
 
