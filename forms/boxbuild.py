@@ -46,6 +46,13 @@ def render_boxbuild():
         "Maintenance Engineer"
     ]
 
+    pcis_departments = [
+        "Test Development Engineer",
+        "Program Manager",
+        "Account Manager",
+        "Demand Planner"
+    ]
+
     editable_col =1
 
     
@@ -79,6 +86,16 @@ def render_boxbuild():
         df,
         initial,
         departments,
+        editable_col,
+        attendance_data
+    )
+    
+    st.markdown("---")
+
+    render_team_table(
+        df,
+        initial,
+        pcis_departments,
         editable_col,
         attendance_data
     )
