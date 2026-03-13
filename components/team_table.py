@@ -28,16 +28,16 @@ def render_team_table(df, initial, departments, editable_col):
         col1,col2,col3,col4 = st.columns(4)
 
         with col1:
-            st.date_input("", key="mtg1")
+            st.date_input("", key="mtg1", disabled=editable_col != 1)
 
         with col2:
-            st.date_input("", key="mtg2", disabled=True)
+            st.date_input("", key="mtg2", disabled=editable_col != 2)
 
         with col3:
-            st.date_input("", key="mtg3",  disabled=True)
+            st.date_input("", key="mtg3",  disabled=editable_col != 3)
 
         with col4:
-            st.date_input("", key="mtg4",  disabled=True)
+            st.date_input("", key="mtg4",  disabled=editable_col != 4)
 
     st.markdown("---")
 
@@ -83,16 +83,17 @@ def render_team_table(df, initial, departments, editable_col):
             col1,col2,col3,col4 = st.columns(4)
 
             with col1:
-                st.checkbox("",key=f"{dept}_m1")
+                st.checkbox("",key=f"{dept}_m1", disabled=editable_col != 1)
 
             with col2:
-                st.checkbox("", key=f"{dept}_m2")
+                st.checkbox("", key=f"{dept}_m2", disabled=editable_col != 2)
 
             with col3:
-                st.checkbox("", key=f"{dept}_m3")
+                st.checkbox("", key=f"{dept}_m3", disabled=editable_col != 3)
 
             with col4:
-                st.checkbox("", key=f"{dept}_m4")
+                st.checkbox("", key=f"{dept}_m4", disabled=editable_col != 4)
+
 
 
 
