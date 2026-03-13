@@ -44,7 +44,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
         col4.markdown("**Email**")
 
     with right:
-        st.markdown("### ATTENDANCES")
+
         st.markdown("<h3 style='text-align: center;'>ATTENDANCES</h3>", unsafe_allow_html=True)
 
 
@@ -132,6 +132,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             with col4:
                 checked = attendance_data.get(dept, {}).get("m4", False)
                 st.checkbox("", value=checked, key=f"{dept}_m4", disabled=editable_col != 4)
+
 
 
 
