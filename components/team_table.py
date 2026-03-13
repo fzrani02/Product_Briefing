@@ -10,17 +10,17 @@ def render_team_table(df, initial, departments, editable_col):
     st.markdown("""
     <table style="width:100%; border-collapse: collapse; text-align:center;">
     <tr>
-        <th rowspan="2" style="border:1px solid black;">Department</th>
-        <th rowspan="2" style="border:1px solid black;">Name</th>
-        <th rowspan="2" style="border:1px solid black;">Ext. #</th>
-        <th rowspan="2" style="border:1px solid black;">Email</th>
-        <th colspan="4" style="border:1px solid black;">Attendances</th>
+        <th rowspan="2">Department</th>
+        <th rowspan="2">Name</th>
+        <th rowspan="2">Ext. #</th>
+        <th rowspan="2">Email</th>
+        <th colspan="4">Attendances</th>
     </tr>
     <tr>
-        <th style="border:1px solid black;">Mtg</th>
-        <th style="border:1px solid black;">Mtg</th>
-        <th style="border:1px solid black;">Mtg</th>
-        <th style="border:1px solid black;">Mtg</th>
+        <th>Mtg</th>
+        <th>Mtg</th>
+        <th>Mtg</th>
+        <th>Mtg</th>
     </tr>
     </table>
     """, unsafe_allow_html=True)
@@ -42,7 +42,7 @@ def render_team_table(df, initial, departments, editable_col):
             selected = st.selectbox(
                 "Engineer",
                 engineer_list,
-                key=f"{dept}_engineer"
+                key=f"{dept}_er"
             )
 
         email = ""
@@ -72,3 +72,4 @@ def render_team_table(df, initial, departments, editable_col):
 
         with col8:
             st.checkbox("", key=f"{dept}_m4")
+
