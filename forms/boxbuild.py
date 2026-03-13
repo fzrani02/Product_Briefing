@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from components.header import render_header
 from components.project_form import render_project_form
+
 from components.team_table import render_team_table
 
 from datetime import date
@@ -34,5 +35,23 @@ def render_boxbuild():
     ]
 
     editable_col =1
+
+    revision = None
+    uploaded_pdf = st.file_uploader("Upload Previous PDF", type=["pdf"])
+    
+    if uploaded_pdf:
+        revision = None   # nanti dari parser PDF
+    
+    if revision is None and uploaded_pdf is None:
+        editable_col = 1
+    
+    elif revision is None and uploaded_pdf:
+        editable_col = 2
+    
+    elif revision == "A":
+        editable_col = 3
+    
+    elif revision == "B":
+        editable_col = 4
     render_team_table(df, initial, departments, editable_col)
 
