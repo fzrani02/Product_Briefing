@@ -4,6 +4,8 @@ from components.header import render_header
 from components.project_form import render_project_form
 
 from components.team_table import render_team_table
+from utils.revision_logic import get_editable_column
+from utils.pdf_import import read_pdf, parse_form
 
 from datetime import date
 from utils.database import load_database
@@ -36,11 +38,24 @@ def render_boxbuild():
 
     editable_col =1
 
-    revision = None
-    uploaded_pdf = st.file_uploader("Upload Previous PDF", type=["pdf"])
     
+    uploaded_pdf = st.file_uploader(
+        "Upload Previous Briefing PDF",
+        type=["pdf"]
+    )
+    revision = None
+    attendance_data = {}
+
     if uploaded_pdf:
         revision = None   # nanti dari parser PDF
+        text = read_pdf(uploaded_pdf)
+    
+        parsed = parse_form(text)
+    
+        revision = parsed["revision"]
+    
+        attendance_data = parsed["attendance"]
+        editable_col = get_editable_column(revision, uploaded_pdf)
     
     if revision is None and uploaded_pdf is None:
         editable_col = 1
@@ -53,5 +68,11 @@ def render_boxbuild():
     
     elif revision == "B":
         editable_col = 4
-    render_team_table(df, initial, departments, editable_col)
-
+    render_team_table(
+        df,
+        initial,
+        departments,
+        editable_col,
+        attendance_data
+    )
+    
