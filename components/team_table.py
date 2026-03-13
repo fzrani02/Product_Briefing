@@ -10,15 +10,23 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
     div[data-testid="stCheckbox"] {
         display:flex;
         justify-content:center;
+        align-items: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    div[data-testid="stCheckbox"] > label {
+        width: fit-content;
+        padding-bottom: 0px;
+        margin: 0 auto;
     }
 
-    div[data-testid="stTextInput"] {
+    div[data-testid="stTextInput"], div[data-testid="stSelectbox"] {
         margin-top:-5px;
     }
 
-    div[data-testid="stSelectbox"] {
-        margin-top:-5px;
-    }
+    
 
     </style>
     """, unsafe_allow_html=True)
@@ -122,6 +130,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data):
             with col4:
                 checked = attendance_data.get(dept, {}).get("m4", False)
                 st.checkbox("", value=checked, key=f"{dept}_m4", disabled=editable_col != 4)
+
 
 
 
