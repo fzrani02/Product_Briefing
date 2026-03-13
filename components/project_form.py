@@ -11,10 +11,10 @@ def render_project_form():
 
   with col2:
     customer_map = {
+      "CG": "COGNEX",
       "GE": "GEA",
-      "PH": "Philips",
-      "SI": "Siemens",
-      "BO": "Bosch",
+      "OR": "ORBCOMM",
+      "LF": "LIFE FITNESS",
     }
     pci = st.text_input("PCI FG P/N")
     initial = pci[:2].upper() if pci else ""
@@ -45,6 +45,7 @@ def render_project_form():
     "product_type": product_type
   }
   
+
 
 
 
