@@ -75,7 +75,7 @@ def render_team_table(df, initial, departments, editable_col):
             col1,col2,col3,col4 = st.columns(4)
 
             with col1:
-                st.checkbox(key=f"{dept}_m1")
+                st.checkbox("",key=f"{dept}_m1")
 
             with col2:
                 st.checkbox("", key=f"{dept}_m2")
@@ -85,6 +85,7 @@ def render_team_table(df, initial, departments, editable_col):
 
             with col4:
                 st.checkbox("", key=f"{dept}_m4")
+
 
 
 
