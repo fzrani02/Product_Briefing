@@ -84,14 +84,7 @@ def render_boxbuild():
     elif revision == "B":
         editable_col = 4
 
-    pdf_file = generate_pdf()
-
-    st.download_button(
-        label="Download PDF",
-        data=pdf_file,
-        file_name="product_briefing.pdf",
-        mime="application/pdf"
-    )
+   
     
     render_team_table(
         df,
@@ -123,12 +116,12 @@ def render_boxbuild():
 
     if st.button("Export to PDF"):
     
-        generate_pdf()
-    
-        with open("report.pdf", "rb") as f:
-            st.download_button(
-                "Download PDF",
-                f,
-                file_name="project_briefing.pdf"
-            )
+        pdf_file = generate_pdf()
+
+        st.download_button(
+            label="Download PDF",
+            data=pdf_file
+            file_name="product_briefing.pdf",
+            mime="application/pdf"
+        )
     
