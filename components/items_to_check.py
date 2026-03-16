@@ -2,7 +2,6 @@
 import streamlit as st
 
 def render_test_checkbox():
-    st.markdown("**ICT Program / Fixture**")
     col1, col2 = st.columns(2)
 
     with col1:
