@@ -5,43 +5,46 @@ import streamlit as st
 def render_items_to_check(df):
 
     st.markdown("## ITEMS TO CHECK")
+    
     st.write ("NOTE: All documents/package from Design/Customer must be updated for every stage of the build including Mass Production")
     engineer_list = [""] + df["ER"].unique().tolist()
+    with st.container(height=600):  
 
-    col1,col2,col3,col4 = st.columns([3,2,2,4])
+        col1,col2,col3,col4 = st.columns([3,2,2,4])
 
-    col1.markdown("**Check Item**")
-    col2.markdown("**PIC**")
-    col3.markdown("**Target Finish**")
-    col4.markdown("**Remarks**")
-
-    st.markdown("---")
-
-    for section, items in SECTIONS.items():
-        st.markdown{f"### {section}")
-                    
-        for item in items:
-            if item == "ICT Program /  Fixture":
-                c1,c2,c3,c4 = st.columns([3,2,2,4])
-        
-                with c1:
-                    st.write(item)
-        
-                with c2:
-                    render_test_checkbox()
-
-                with c3:
-                    st.text_input("", key="target_test")
-        
-                with c4:
-                    st.text_input("", key="remark_test")
-            else:
-                render_row(item, engineer_list)
-                
+        col1.markdown("**Check Item**")
+        col2.markdown("**PIC**")
+        col3.markdown("**Target Finish**")
+        col4.markdown("**Remarks**")
+    
         st.markdown("---")
-
+    
+        for section, items in SECTIONS.items():
+            st.markdown{f"### {section}")
+                        
+            for item in items:
+                if item == "ICT Program /  Fixture":
+                    c1,c2,c3,c4 = st.columns([3,2,2,4])
+            
+                    with c1:
+                        st.write(item)
+            
+                    with c2:
+                        render_test_checkbox()
+    
+                    with c3:
+                        st.text_input("", key="target_test")
+            
+                    with c4:
+                        st.text_input("", key="remark_test")
+                else:
+                    render_row(item, engineer_list)
+                    
+            st.markdown("---")
+    
 
 ##############################
+
 SECTIONS = {
     "DOCUMENTATION": [
         "BOM",
