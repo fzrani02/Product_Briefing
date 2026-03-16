@@ -3,6 +3,7 @@ import streamlit as st
 def render_items_to_check(df):
 
     st.markdown("## ITEMS TO CHECK")
+    st.markdown("###### NOTE: All documents/package from Design/Customer must be updated for every stage of the build including Mass Production")
 
     col1,col2,col3,col4 = st.columns([3,2,2,4])
 
