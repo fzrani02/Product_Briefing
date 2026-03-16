@@ -80,29 +80,29 @@ SECTIONS = {
     ]
 }
 
-# Custom CSS 
-st.markdown(
-    '''
-    <style>
-    .streamlit-expanderHeader {
-        background-color: white;
-        color: black; # Adjust this for expander header color
-    }
-    .streamlit-expanderContent {
-        background-color: white;
-        color: black; # Expander content color
-    }
-    </style>
-    ''',
-    unsafe_allow_html=True
-)
-
 def render_items_to_check(df):
 
     st.markdown("## ITEMS TO CHECK")
     
     st.write ("NOTE: All documents/package from Design/Customer must be updated for every stage of the build including Mass Production")
     engineer_list = [""] + df["ER"].unique().tolist()
+    st.markdown(
+        """
+        <style>
+        
+        div[data-testid="stExpander"] {
+            background-color:#f5f7fa;
+            border-radius:8px;
+            border:1px solid #d0d7de;
+        }
+        
+        div[data-testid="stExpander"] summary {
+            font-weight:600;
+            font-size:14px;
+        }
+        
+        </style>
+        """, unsafe_allow_html=True)
     with st.container(border=True, height=600):  
 
         col1,col2,col3,col4 = st.columns([3,2,2,4])
