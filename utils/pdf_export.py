@@ -1,9 +1,33 @@
+from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
+import streamlit as st
+import io
 
-def generate_pdf(project_name):
 
-    c = canvas.Canvas("report.pdf")
+def generate_pdf():
 
-    c.drawString(100,750,f"Project : {project_name}")
+    buffer = io.BytesIO()
+
+    c = canvas.Canvas(buffer, pagesize=A4)
+
+    y = 800
+
+    c.setFont("Helvetica", 10)
+
+    for key, value in st.session_state.items():
+
+        text = f"{key} : {value}"
+
+        c.drawString(50, y, text)
+
+        y -= 15
+
+        if y < 50:
+            c.showPage()
+            y = 800
 
     c.save()
+
+    buffer.seek(0)
+
+    return buffer
