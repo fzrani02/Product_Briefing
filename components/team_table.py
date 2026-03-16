@@ -119,19 +119,19 @@ def render_team_table(df, initial, departments, editable_col, attendance_data, t
 
             with col1:
                 checked = attendance_data.get(dept, {}).get("m1", False)
-                st.checkbox("", value=checked, key=f"{dept}_m1", disabled=(editable_col != 1) or (not engineer_selected), help="Select Engineer first")
+                st.checkbox("", value=checked, key=f"{dept}_m1", disabled=(editable_col != 1) or (not engineer_selected))
 
             with col2:
                 checked = attendance_data.get(dept, {}).get("m2", False)
-                st.checkbox("", value=checked, key=f"{dept}_m2", disabled=(editable_col != 2) or (not engineer_selected), help="Select Engineer first")
+                st.checkbox("", value=checked, key=f"{dept}_m2", disabled=(editable_col != 2) or (not engineer_selected))
 
             with col3:
                 checked = attendance_data.get(dept, {}).get("m3", False)
-                st.checkbox("", value=checked, key=f"{dept}_m3", disabled=(editable_col != 3) or (not engineer_selected), help="Select Engineer first")
+                st.checkbox("", value=checked, key=f"{dept}_m3", disabled=(editable_col != 3) or (not engineer_selected))
 
             with col4:
                 checked = attendance_data.get(dept, {}).get("m4", False)
-                st.checkbox("", value=checked, key=f"{dept}_m4", disabled=(editable_col != 4) or (not engineer_selected), help="Select Engineer first")
+                st.checkbox("", value=checked, key=f"{dept}_m4", disabled=(editable_col != 4) or (not engineer_selected))
 
 
 
