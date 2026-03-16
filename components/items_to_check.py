@@ -20,7 +20,7 @@ def render_items_to_check(df):
         st.markdown("---")
     
         for section, items in SECTIONS.items():
-            st.markdown{f"### {section}"}
+            st.markdown(f"### {section}")
                         
             for item in items:
                 if item == "ICT Program /  Fixture":
