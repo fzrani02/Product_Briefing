@@ -68,7 +68,7 @@ SECTIONS = {
     ], 
     
     "TEST":[
-        "ICT Program/Fixture"
+        "ICT Program / Fixture"
     ],
     "QUALITY":[
         "Control Plan",
