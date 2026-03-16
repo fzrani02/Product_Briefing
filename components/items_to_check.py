@@ -77,7 +77,7 @@ SECTIONS = {
     "MATERIAL AVAILABILITY":[
         "Material Status"
     ],
-    "SHIPMENT PLAN": [
+    "SHIPMENT PLAN":[
         "Shipment Schedule"
     ],
     "OTHERS":[
