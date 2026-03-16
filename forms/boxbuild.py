@@ -103,15 +103,15 @@ def render_boxbuild():
     st.markdown("---")
 
     with st.expander("PROJECT TEAM MEMBERS (PCIS)", expanded=False):
-    render_team_table(
-        df,
-        initial,
-        pcis_departments,
-        editable_col,
-        attendance_data,
-        "PROJECT TEAM MEMBERS (PCIS)",
-        "pcis"
-    )
+        render_team_table(
+            df,
+            initial,
+            pcis_departments,
+            editable_col,
+            attendance_data,
+            "PROJECT TEAM MEMBERS (PCIS)",
+            "pcis"
+        )
     autosave()
 
     st.markdown("---")
