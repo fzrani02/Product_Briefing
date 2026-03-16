@@ -41,6 +41,46 @@ def render_row(item, engineer_list):
         )
 
 
+SECTIONS = {
+    "DOCUMENTATION": [
+        "BOM",
+        "Drawing",
+        "Drawing Upload to SAP or SharePoint",
+        "Process Control Plan"
+    ],
+
+    "SMT":[
+        "Stencil",
+        "Solder Paste",
+        "SMT Program"
+    ],
+    "MI": [
+        "MI Preparation",
+        "Work Instruction"
+    ],
+    "BACK END": [
+        "Assembly Jig",
+        "Process Flow"
+    ], 
+    
+    "TEST":[
+        "ICT Program / Fixture"
+    ],
+    "QUALITY":[
+        "Control Plan",
+        "Quality Instruction"
+    ],
+    "MATERIAL AVAILABILITY":[
+        "Material Status"
+    ],
+    "SHIPMENT PLAN":[
+        "Shipment Schedule"
+    ],
+    "OTHERS":[
+        "Other Requirements"
+    ]
+}
+
 
 def render_items_to_check(df):
 
@@ -84,46 +124,6 @@ def render_items_to_check(df):
     
 
 ##############################
-
-SECTIONS = {
-    "DOCUMENTATION": [
-        "BOM",
-        "Drawing",
-        "Drawing Upload to SAP or SharePoint",
-        "Process Control Plan"
-    ],
-
-    "SMT":[
-        "Stencil",
-        "Solder Paste",
-        "SMT Program"
-    ],
-    "MI": [
-        "MI Preparation",
-        "Work Instruction"
-    ],
-    "BACK END": [
-        "Assembly Jig",
-        "Process Flow"
-    ], 
-    
-    "TEST":[
-        "ICT Program / Fixture"
-    ],
-    "QUALITY":[
-        "Control Plan",
-        "Quality Instruction"
-    ],
-    "MATERIAL AVAILABILITY":[
-        "Material Status"
-    ],
-    "SHIPMENT PLAN":[
-        "Shipment Schedule"
-    ],
-    "OTHERS":[
-        "Other Requirements"
-    ]
-}
 
 
                     
