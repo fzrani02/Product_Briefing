@@ -25,22 +25,17 @@ def generate_pdf(project_data, departments, pcis_departments):
 
     logo = Image("logo.png", width=120, height=40)
 
-    header_table = Table([
-        [logo, Paragraph("<b>PRODUCT BRIEFING ATTENDANCE</b>", styles['Title'])]
-    ], colWidths=[140, 400])
+
     
-    header_table.setStyle(TableStyle([
-        ("VALIGN",(0,0),(-1,-1),"MIDDLE")
-    ]))
-    
-    elements.append(header_table)
     elements.append(Spacer(1,20))
 
     # =========================
     # TITLE
     # =========================
 
-
+    elements.append(Paragraph("<b>PRODUCT BRIEFING ATTENDANCE</b>", styles['Title']))
+    elements.append(Spacer(1,20))
+    
     # =========================
     # PROJECT INFO
     # =========================
