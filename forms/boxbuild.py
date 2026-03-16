@@ -7,6 +7,7 @@ from components.team_table import render_team_table
 from components.items_to_check import render_items_to_check
 from utils.revision_logic import get_editable_column
 from utils.pdf_import import read_pdf, parse_form
+from utils.pdf_export import generate_pdf
 
 from datetime import date
 from utils.database import load_database
@@ -57,8 +58,6 @@ def render_boxbuild():
 
     editable_col =1
 
-    
-    
     revision = None
     attendance_data = {}
 
@@ -84,6 +83,16 @@ def render_boxbuild():
     
     elif revision == "B":
         editable_col = 4
+
+    pdf_file = generate_pdf()
+
+    st.download_button(
+        label="Download PDF",
+        data=pdf_file,
+        file_name="product_briefing.pdf",
+        mime="application/pdf"
+    )
+    
     render_team_table(
         df,
         initial,
