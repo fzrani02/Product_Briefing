@@ -114,7 +114,10 @@ def render_boxbuild():
     render_items_to_check(df)
     st.markdown("---")
 
+    from utils.revision_logic import get_next_revision
+
     if st.button("Export to PDF"):
+        project_data["revision"] = get_next_revision(project_data.get("revision"))
     
         pdf_file = generate_pdf(project_data, departments, pcis_departments)
 
