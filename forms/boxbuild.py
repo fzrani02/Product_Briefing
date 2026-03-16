@@ -7,6 +7,8 @@ from components.team_table import render_team_table
 from components.items_to_check import render_items_to_check
 from utils.revision_logic import get_editable_column
 from utils.pdf_import import read_pdf, parse_form
+from utils.revision_logic import get_next_revision
+from datetime import datetime
 from utils.pdf_export import generate_pdf
 
 from datetime import date
@@ -117,15 +119,24 @@ def render_boxbuild():
     from utils.revision_logic import get_next_revision
 
     if st.button("Export to PDF"):
-        project_data["revision"] = get_next_revision(project_data.get("revision"))
+        
+        revision = get_next_revision(project_data.get("revision"))
+        project_data["revision"] = revision
+        project_data["data_updated"] = date.today()
     
         pdf_file = generate_pdf(project_data, departments, pcis_departments)
+
+        pci = project_data.get("pci","")
+        account = project_data.get("project_account","")
+        date_updated = project_data.get("data_updated", date.today())
+        revision = project_data.get("revision","")
+        
+        filename = f"Attendance - {pci} - {account} - {date_updated} - Rev {revision}.pdf"
 
         st.download_button(
             label="Download PDF",
             data=pdf_file,
-            
-            file_name="product_briefing.pdf",
+            file_name=filename,
             mime="application/pdf"
         )
     
