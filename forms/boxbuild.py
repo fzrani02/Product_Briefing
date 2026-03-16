@@ -119,4 +119,16 @@ def render_boxbuild():
 
     st.markdown("---")
     render_items_to_check(df)
+    st.markdown("---")
+
+    if st.button("Export to PDF"):
+    
+        generate_pdf()
+    
+        with open("report.pdf", "rb") as f:
+            st.download_button(
+                "Download PDF",
+                f,
+                file_name="project_briefing.pdf"
+            )
     
