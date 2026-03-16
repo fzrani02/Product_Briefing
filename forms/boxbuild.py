@@ -10,6 +10,7 @@ from utils.pdf_import import read_pdf, parse_form
 
 from datetime import date
 from utils.database import load_database
+from utils.autosave import autosave
 
 
 def render_boxbuild():
@@ -93,6 +94,7 @@ def render_boxbuild():
         "plant"
     )
     
+    
     st.markdown("---")
 
     render_team_table(
@@ -104,6 +106,7 @@ def render_boxbuild():
         "PROJECT TEAM MEMBERS (PCIS)",
         "pcis"
     )
+    autosave()
 
     st.markdown("---")
     render_items_to_check(df)
