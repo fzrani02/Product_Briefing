@@ -96,7 +96,7 @@ def generate_pdf(project_data, departments, pcis_departments):
             "✓" if st.session_state.get(f"{dept}_m4") else "",
         ])
 
-    team_table = Table(team_data)
+    team_table = Table(team_data, hAlign='LEFT')
 
     team_table.setStyle(TableStyle([
         ("GRID",(0,0),(-1,-1),1,colors.black),
@@ -129,7 +129,7 @@ def generate_pdf(project_data, departments, pcis_departments):
             "✓" if st.session_state.get(f"{dept}_m4") else "",
         ])
 
-    pcis_table = Table(pcis_data)
+    pcis_table = Table(pcis_data, hAlign='LEFT')
 
     pcis_table.setStyle(TableStyle([
         ("GRID",(0,0),(-1,-1),1,colors.black),
@@ -160,7 +160,7 @@ def generate_pdf(project_data, departments, pcis_departments):
 
             item_table.append([item,pic,target,remark])
 
-    items = Table(item_table)
+    items = Table(item_table, hAlign='LEFT')
 
     items.setStyle(TableStyle([
         ("GRID",(0,0),(-1,-1),1,colors.black),
