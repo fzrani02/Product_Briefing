@@ -1,32 +1,152 @@
 from reportlab.lib.pagesizes import A4
-from reportlab.pdfgen import canvas
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib import colors
 import streamlit as st
 import io
 
 
-def generate_pdf():
+def generate_pdf(project_data, departments, pcis_departments):
 
     buffer = io.BytesIO()
 
-    c = canvas.Canvas(buffer, pagesize=A4)
+    doc = SimpleDocTemplate(
+        buffer,
+        pagesize=A4,
+        rightMargin=30,
+        leftMargin=30,
+        topMargin=30,
+        bottomMargin=30
+    )
 
-    y = 800
+    styles = getSampleStyleSheet()
+    elements = []
 
-    c.setFont("Helvetica", 10)
+    # =========================
+    # TITLE
+    # =========================
 
-    for key, value in st.session_state.items():
+    elements.append(Paragraph("<b>PRODUCT BRIEFING</b>", styles['Title']))
+    elements.append(Spacer(1,20))
 
-        text = f"{key} : {value}"
+    # =========================
+    # PROJECT INFO
+    # =========================
 
-        c.drawString(50, y, text)
+    project_table = [
+        ["Project Name", project_data["project_name"], "Customer", project_data["customer"]],
+        ["Build Type", project_data["build_type"], "PCI FG P/N", project_data["pci"]],
+        ["Project Account", project_data["project_account"], "Product Type", project_data["product_type"]],
+        ["Date Updated", str(project_data["data_updated"]), "Revision", project_data["revision"]],
+    ]
 
-        y -= 15
+    t = Table(project_table, colWidths=[120,160,120,120])
 
-        if y < 50:
-            c.showPage()
-            y = 800
+    t.setStyle(TableStyle([
+        ("GRID",(0,0),(-1,-1),1,colors.black),
+        ("BACKGROUND",(0,0),(0,-1),colors.lightgrey),
+        ("BACKGROUND",(2,0),(2,-1),colors.lightgrey),
+    ]))
 
-    c.save()
+    elements.append(t)
+    elements.append(Spacer(1,25))
+
+    # =========================
+    # TEAM MEMBERS
+    # =========================
+
+    elements.append(Paragraph("<b>PROJECT TEAM MEMBERS (PLANT)</b>", styles['Heading3']))
+    elements.append(Spacer(1,10))
+
+    team_data = [["Department","Name","Ext","Email","M1","M2","M3","M4"]]
+
+    for dept in departments:
+
+        team_data.append([
+            dept,
+            st.session_state.get(f"{dept}_engineer",""),
+            st.session_state.get(f"{dept}_ext",""),
+            st.session_state.get(f"{dept}_email",""),
+            "✓" if st.session_state.get(f"{dept}_m1") else "",
+            "✓" if st.session_state.get(f"{dept}_m2") else "",
+            "✓" if st.session_state.get(f"{dept}_m3") else "",
+            "✓" if st.session_state.get(f"{dept}_m4") else "",
+        ])
+
+    team_table = Table(team_data)
+
+    team_table.setStyle(TableStyle([
+        ("GRID",(0,0),(-1,-1),1,colors.black),
+        ("BACKGROUND",(0,0),(-1,0),colors.lightgrey),
+        ("ALIGN",(4,1),(-1,-1),"CENTER")
+    ]))
+
+    elements.append(team_table)
+    elements.append(Spacer(1,25))
+
+    # =========================
+    # PCIS TEAM
+    # =========================
+
+    elements.append(Paragraph("<b>PROJECT TEAM MEMBERS (PCIS)</b>", styles['Heading3']))
+    elements.append(Spacer(1,10))
+
+    pcis_data = [["Department","Name","Ext","Email","M1","M2","M3","M4"]]
+
+    for dept in pcis_departments:
+
+        pcis_data.append([
+            dept,
+            st.session_state.get(f"{dept}_engineer",""),
+            st.session_state.get(f"{dept}_ext",""),
+            st.session_state.get(f"{dept}_email",""),
+            "✓" if st.session_state.get(f"{dept}_m1") else "",
+            "✓" if st.session_state.get(f"{dept}_m2") else "",
+            "✓" if st.session_state.get(f"{dept}_m3") else "",
+            "✓" if st.session_state.get(f"{dept}_m4") else "",
+        ])
+
+    pcis_table = Table(pcis_data)
+
+    pcis_table.setStyle(TableStyle([
+        ("GRID",(0,0),(-1,-1),1,colors.black),
+        ("BACKGROUND",(0,0),(-1,0),colors.lightgrey),
+        ("ALIGN",(4,1),(-1,-1),"CENTER")
+    ]))
+
+    elements.append(pcis_table)
+    elements.append(Spacer(1,25))
+
+    # =========================
+    # ITEMS TO CHECK
+    # =========================
+
+    elements.append(Paragraph("<b>ITEMS TO CHECK</b>", styles['Heading3']))
+    elements.append(Spacer(1,10))
+
+    item_table = [["Item","PIC","Target","Remark"]]
+
+    for key in st.session_state:
+
+        if key.startswith("remark_"):
+
+            item = key.replace("remark_","")
+            pic = ", ".join(st.session_state.get(f"pic_{item}",[]))
+            target = st.session_state.get(f"target_{item}","")
+            remark = st.session_state.get(key,"")
+
+            item_table.append([item,pic,target,remark])
+
+    items = Table(item_table)
+
+    items.setStyle(TableStyle([
+        ("GRID",(0,0),(-1,-1),1,colors.black),
+        ("BACKGROUND",(0,0),(-1,0),colors.lightgrey)
+    ]))
+
+    elements.append(items)
+
+    doc.build(elements)
 
     buffer.seek(0)
 
