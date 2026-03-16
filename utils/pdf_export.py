@@ -1,5 +1,6 @@
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
+from reportlab.platypus import Image
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
 import streamlit as st
@@ -21,6 +22,19 @@ def generate_pdf(project_data, departments, pcis_departments):
 
     styles = getSampleStyleSheet()
     elements = []
+
+    logo = Image("logo.png", width=120, height=40)
+
+    header_table = Table([
+        [logo, Paragraph("<b>PRODUCT BRIEFING ATTENDANCE</b>", styles['Title'])]
+    ], colWidths=[140, 400])
+    
+    header_table.setStyle(TableStyle([
+        ("VALIGN",(0,0),(-1,-1),"MIDDLE")
+    ]))
+    
+    elements.append(header_table)
+    elements.append(Spacer(1,20))
 
     # =========================
     # TITLE
