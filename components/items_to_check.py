@@ -80,6 +80,22 @@ SECTIONS = {
     ]
 }
 
+# Custom CSS 
+st.markdown(
+    '''
+    <style>
+    .streamlit-expanderHeader {
+        background-color: white;
+        color: black; # Adjust this for expander header color
+    }
+    .streamlit-expanderContent {
+        background-color: white;
+        color: black; # Expander content color
+    }
+    </style>
+    ''',
+    unsafe_allow_html=True
+)
 
 def render_items_to_check(df):
 
