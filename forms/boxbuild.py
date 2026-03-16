@@ -87,20 +87,22 @@ def render_boxbuild():
         editable_col = 4
 
    
-    
-    render_team_table(
-        df,
-        initial,
-        departments,
-        editable_col,
-        attendance_data,
-        "PROJECT TEAM MEMBERS (PLANTS)",
-        "plant"
-    )
+    with st.expander("PROJECT TEAM MEMBERS (PLANT)", expanded=False):
+        
+        render_team_table(
+            df,
+            initial,
+            departments,
+            editable_col,
+            attendance_data,
+            "PROJECT TEAM MEMBERS (PLANTS)",
+            "plant"
+        )
     
     
     st.markdown("---")
 
+    with st.expander("PROJECT TEAM MEMBERS (PCIS)", expanded=False):
     render_team_table(
         df,
         initial,
