@@ -66,7 +66,8 @@ SECTIONS = {
         "Assembly Jig",
         "Process Flow"
     ], 
-    "TEST:[
+    
+    "TEST":[
         "ICT Program/Fixture"
     ],
     "QUALITY":[
