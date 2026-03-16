@@ -1,6 +1,46 @@
 
 import streamlit as st
 
+def render_test_checkbox():
+    st.markdown("**ICT Program / Fixture**")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.checkbox("Agilent", key="ict_agilent")
+        st.checkbox("Teradyne", key="ict_teradyne")
+        st.checkbox("Genrad", key="ict_genrad")
+
+    with col2:
+        st.checkbox("Tri", key="ict_tri")
+        st.checkbox("Tescon", key="ict_tescon")
+
+def render_row(item, engineer_list):
+    c1, c2, c3,c4 = st.columns([3,2,2,4])
+    
+    with c1:
+        st.write(item)
+
+    with c2:
+        st.multiselect(
+            "",
+            engineer_list,
+            key=f"pic_{item}",
+            label_visibility="collapsed"
+        )
+    with c3: 
+        st.text_input(
+            "",
+            key=f"target_{item}",
+            label_visibility = "collapsed"
+        )
+    with c4:
+        st.text_input(
+            "",
+            key=f"remark_{item}",
+            label_visibility = "collapsed"
+        )
+
+
 
 def render_items_to_check(df):
 
@@ -85,43 +125,6 @@ SECTIONS = {
     ]
 }
 
-def render_row(item, engineer_list):
-    c1, c2, c3,c4 = st.columns([3,2,2,4])
-    
-    with c1:
-        st.write(item)
 
-    with c2:
-        st.multiselect(
-            "",
-            engineer_list,
-            key=f"pic_{item}",
-            label_visibility="collapsed"
-        )
-    with c3: 
-        st.text_input(
-            "",
-            key=f"target_{item}",
-            label_visibility = "collapsed"
-        )
-    with c4:
-        st.text_input(
-            "",
-            key=f"remark_{item}",
-            label_visibility = "collapsed"
-        )
-
-def render_test_checkbox():
-    st.markdown("**ICT Program / Fixture**")
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.checkbox("Agilent", key="ict_agilent")
-        st.checkbox("Teradyne", key="ict_teradyne")
-        st.checkbox("Genrad", key="ict_genrad")
-
-    with col2:
-        st.checkbox("Tri", key="ict_tri")
-        st.checkbox("Tescon", key="ict_tescon")
                     
 ##############################################################3
