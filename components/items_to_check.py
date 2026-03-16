@@ -91,9 +91,9 @@ def render_items_to_check(df):
         <style>
         
         div[data-testid="stExpander"] {
-            background-color:#f5f7fa;
+            background-color:#ffffff;
             border-radius:8px;
-            border:1px solid #d0d7de;
+            border:1px solid #ff9900;
         }
         
         div[data-testid="stExpander"] summary {
