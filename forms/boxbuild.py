@@ -120,7 +120,8 @@ def render_boxbuild():
 
         st.download_button(
             label="Download PDF",
-            data=pdf_file
+            data=pdf_file,
+            
             file_name="product_briefing.pdf",
             mime="application/pdf"
         )
