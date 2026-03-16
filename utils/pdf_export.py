@@ -40,7 +40,7 @@ def generate_pdf(project_data, departments, pcis_departments):
     # TITLE
     # =========================
 
-    elements.append(Paragraph("<b>PRODUCT BRIEFING</b>", styles['Title']))
+    elements.append(Paragraph("<b>PRODUCT BRIEFING ATTENDANCE</b>", styles['Title']))
     elements.append(Spacer(1,20))
 
     # =========================
