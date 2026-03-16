@@ -100,7 +100,6 @@ def render_boxbuild():
         )
     
     
-    st.markdown("---")
 
     with st.expander("PROJECT TEAM MEMBERS (PCIS)", expanded=False):
         render_team_table(
