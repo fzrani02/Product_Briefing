@@ -116,7 +116,7 @@ def render_boxbuild():
 
     if st.button("Export to PDF"):
     
-        pdf_file = (project_data, departments, pcis_department)
+        pdf_file = generate_pdf(project_data, departments, pcis_departments)
 
         st.download_button(
             label="Download PDF",
