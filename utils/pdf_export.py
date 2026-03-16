@@ -25,16 +25,26 @@ def generate_pdf(project_data, departments, pcis_departments):
 
     logo = Image("logo.png", width=120, height=40)
 
-    header_table = Table([
-        [logo, Paragraph("<b>PRODUCT BRIEFING ATTENDANCE</b>", styles['Title'])]
-    ], colWidths=[140, 400])
+    title = Paragraph(
+        "<para align=center><b>PRODUCT BUILD BRIEFING CHECKLIST</b></para>",
+        styles['Title']
+    )
+    
+    np_info = Paragraph(
+        "<para align=right>NP-F-006<br/>20 Feb 2026</para>",
+        styles['Normal']
+    )
+    
+    header_table = Table(
+        [[logo, title, np_info]],
+        colWidths=[120, 320, 120]
+    )
     
     header_table.setStyle(TableStyle([
-        ("VALIGN",(0,0),(-1,-1),"MIDDLE")
+        ("VALIGN",(0,0),(-1,-1),"MIDDLE"),
     ]))
     
     elements.append(header_table)
-    
     elements.append(Spacer(1,20))
 
     # =========================
