@@ -64,8 +64,10 @@ def extract_project_data(lines):
 
         if "Revision" in line:
             parts = line.split()
-            if len(parts) > 1:
+            if len(parts) > 2:
                 data["revision"] = parts[-1]
+            else:
+                data["revision"] = "A"
 
     return data
 
