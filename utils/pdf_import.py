@@ -19,11 +19,15 @@ def parse_form(text):
     member_pcis = extract_member_pcis(lines)
     item_check = extract_item_check(lines)
 
-    return {
-        "project_data": project_data,
-        "member_plant": member_plant,
-        "member_pcis": member_pcis,
-        "item_check": item_check
+    return project_data = {
+        "project_name": data.get("project_name",""),
+        "customer": data.get("customer",""),
+        "build_type": data.get("build_type",""),
+        "pci": data.get("pci",""),
+        "project_account": data.get("project_account",""),
+        "product_type": data.get("product_type",""),
+        "revision": data.get("revision","A"),
+        "date_updated": data.get("date_updated","")
     }
 
 def extract_project_data(lines):
@@ -40,7 +44,7 @@ def extract_project_data(lines):
         if "Build Type" in line and "PCI FG" in line:
             parts = line.split()
             data["build_type"] = parts[2]
-            data["pci_fg_pn"] = parts[-1]
+            data["pci"] = parts[-1]
 
         if "Project Account" in line and "Product Type" in line:
             parts = line.split()
