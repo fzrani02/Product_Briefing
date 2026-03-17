@@ -60,7 +60,7 @@ def generate_pdf(project_data, departments, pcis_departments):
         ["Project Name", project_data["project_name"], "Customer", project_data["customer"]],
         ["Build Type", project_data["build_type"], "PCI FG P/N", project_data["pci"]],
         ["Project Account", project_data["project_account"], "Product Type", project_data["product_type"]],
-        ["Date Updated", str(project_data["data_updated"]), "Revision", project_data["revision"]],
+        ["Date Updated", str(project_data["date_updated"]), "Revision", project_data["revision"]],
     ]
 
     t = Table(project_table, colWidths=[120,160,120,120])
