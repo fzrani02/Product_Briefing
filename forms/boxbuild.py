@@ -108,11 +108,10 @@ def render_boxbuild():
             initial,
             departments,
             editable_col,
+            member_plant,
             "PROJECT TEAM MEMBERS (PLANTS)",
             "plant"
         )
-    
-    
 
     with st.expander("PROJECT TEAM MEMBERS (PCIS)", expanded=False):
         render_team_table(
