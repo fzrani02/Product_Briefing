@@ -67,6 +67,8 @@ def render_boxbuild():
         text = read_pdf(uploaded_pdf)
     
         parsed = parse_form(text)
+        for key, value in parsed["project_data"].items():
+            st.session_state[key] = value
         st.write(parsed)
 
         project_data.update(parsed["project_data"])
