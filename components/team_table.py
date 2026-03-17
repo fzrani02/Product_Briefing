@@ -75,12 +75,12 @@ def render_team_table(df, initial, departments, editable_col, attendance_data, t
                 selected = st.selectbox(
                     "",
                     engineer_list,
-                    key=f"{dept}_engineer",
+                    key=f"{key_prefix}_{dept}_engineer",
                     label_visibility="collapsed"
                 )
                 engineer_selected = selected != ""
 
-            email_key = f"{dept}_email"
+            email_key = f"{key_prefix}_{dept}_email"
             
             email = ""
             
@@ -94,7 +94,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data, t
             with col3:
                 st.text_input(
                     "",
-                    key=f"{dept}_ext",
+                    key=f"{key_prefix}_{dept}_ext",
                     label_visibility="collapsed"
                 )
 
@@ -112,19 +112,19 @@ def render_team_table(df, initial, departments, editable_col, attendance_data, t
 
             with col1:
                 checked = attendance_data.get(dept, {}).get("m1", False)
-                st.checkbox("", value=checked, key=f"{dept}_m1", disabled=(editable_col != 1) or (not engineer_selected))
+                st.checkbox("", value=checked, key=f"{key_prefix}_{dept}_m1", disabled=(editable_col != 1) or (not engineer_selected))
 
             with col2:
                 checked = attendance_data.get(dept, {}).get("m2", False)
-                st.checkbox("", value=checked, key=f"{dept}_m2", disabled=(editable_col != 2) or (not engineer_selected))
+                st.checkbox("", value=checked, key=f"{key_prefix}_{dept}_m2", disabled=(editable_col != 2) or (not engineer_selected))
 
             with col3:
                 checked = attendance_data.get(dept, {}).get("m3", False)
-                st.checkbox("", value=checked, key=f"{dept}_m3", disabled=(editable_col != 3) or (not engineer_selected))
+                st.checkbox("", value=checked, key=f"{key_prefix}_{dept}_m3", disabled=(editable_col != 3) or (not engineer_selected))
 
             with col4:
                 checked = attendance_data.get(dept, {}).get("m4", False)
-                st.checkbox("", value=checked, key=f"{dept}_m4", disabled=(editable_col != 4) or (not engineer_selected))
+                st.checkbox("", value=checked, key=f"{key_prefix}_{dept}_m4", disabled=(editable_col != 4) or (not engineer_selected))
 
 
 
