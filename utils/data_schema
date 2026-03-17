@@ -1,0 +1,10 @@
+PROJECT_FIELDS = [
+    "project_name",
+    "customer",
+    "build_type",
+    "pci",
+    "project_account",
+    "product_type",
+    "revision",
+    "date_updated"
+]
