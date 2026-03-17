@@ -10,16 +10,15 @@ def read_pdf(uploaded_file):
 
     return text
 
-
 def parse_form(text):
     lines = text.split("\n")
 
-    project_data = extract_project_data(lines)
+    data = extract_project_data(lines)
     member_plant = extract_member_plant(lines)
     member_pcis = extract_member_pcis(lines)
     item_check = extract_item_check(lines)
 
-    return project_data = {
+    project_data = {
         "project_name": data.get("project_name",""),
         "customer": data.get("customer",""),
         "build_type": data.get("build_type",""),
@@ -29,6 +28,14 @@ def parse_form(text):
         "revision": data.get("revision","A"),
         "date_updated": data.get("date_updated","")
     }
+
+    return {
+        "project_data": project_data,
+        "member_plant": member_plant,
+        "member_pcis": member_pcis,
+        "item_check": item_check
+    }
+
 
 def extract_project_data(lines):
 
