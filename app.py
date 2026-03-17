@@ -7,8 +7,8 @@ st.sidebar.title("Form Selection")
 
 form_type = st.sidebar.radio(
     "Select Form",
-    ["BoxBuil"]
+    ["BoxBuild"]
 )
 
-if form_type == "BoxBuil":
+if form_type == "BoxBuild":
     render_boxbuild()
