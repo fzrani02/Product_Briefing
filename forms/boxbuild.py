@@ -70,7 +70,7 @@ def render_boxbuild():
     
         parsed = parse_form(text)
         member_plant = parsed.get("member_plant", [])
-        member_plant = parsed["member_plant"]
+        
         member_pcis = parsed["member_pcis"]
         item_check = parsed["item_check"]
         
