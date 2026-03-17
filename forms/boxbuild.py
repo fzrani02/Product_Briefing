@@ -15,6 +15,9 @@ from datetime import date
 from utils.database import load_database
 from utils.autosave import autosave
 
+member_plant = []
+member_pcis = []
+item_check = []
 
 def render_boxbuild():
     render_header()
@@ -63,10 +66,14 @@ def render_boxbuild():
     revision = None
 
     if uploaded_pdf:
-        revision = None   # nanti dari parser PDF
         text = read_pdf(uploaded_pdf)
     
         parsed = parse_form(text)
+        member_plant = parsed.get("member_plant", [])
+        member_plant = parsed["member_plant"]
+        member_pcis = parsed["member_pcis"]
+        item_check = parsed["item_check"]
+        
         for key, value in parsed["project_data"].items():
             st.session_state[key] = value
         st.write(parsed)
@@ -75,9 +82,7 @@ def render_boxbuild():
         print("dept:", department, "| name:", name)
 
         project_data.update(parsed["project_data"])
-        member_plant = parsed["member_plant"]
-        member_pcis = parsed["member_pcis"]
-        item_check = parsed["item_check"]
+       
     
         revision = project_data.get("revision", "A")
                 
