@@ -7,7 +7,7 @@ st.sidebar.title("Form Selection")
 
 form_type = st.sidebar.radio(
     "Select Form",
-    ["BoxBuild"]
+    ["BoxBuild", "PCBA"]
 )
 
 if form_type == "BoxBuild":
