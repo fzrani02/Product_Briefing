@@ -15,11 +15,12 @@ from datetime import date
 from utils.database import load_database
 from utils.autosave import autosave
 
-member_plant = []
-member_pcis = []
-item_check = []
 
 def render_boxbuild():
+    member_plant = []
+    member_pcis = []
+    item_check = []
+
     render_header()
         
     uploaded_pdf = st.file_uploader(
@@ -69,18 +70,15 @@ def render_boxbuild():
         text = read_pdf(uploaded_pdf)
     
         parsed = parse_form(text)
-        member_plant = parsed.get("member_plant", [])
         
-        member_pcis = parsed["member_pcis"]
-        item_check = parsed["item_check"]
+        member_plant = parsed.get("member_plant", [])
+        member_pcis = parsed.get("member_pcis",[])
+        item_check = parsed.get("item_check",[])
         
         for key, value in parsed["project_data"].items():
             st.session_state[key] = value
         st.write(parsed)
-        print(line)
-        print(parts)
-        print("dept:", department, "| name:", name)
-
+      
         project_data.update(parsed["project_data"])
        
     
