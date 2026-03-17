@@ -61,23 +61,21 @@ def render_boxbuild():
     editable_col =1
 
     revision = None
-    attendance_data = {}
 
     if uploaded_pdf:
         revision = None   # nanti dari parser PDF
         text = read_pdf(uploaded_pdf)
     
         parsed = parse_form(text)
+        st.write(parsed)
 
-        project_data = parsed["project_data"]
+        project_data.update(parsed["project_data"])
         member_plant = parsed["member_plant"]
         member_pcis = parsed["member_pcis"]
         item_check = parsed["item_check"]
     
         revision = project_data.get("revision", "A")
-        
-        attendance_data = {}
-        
+                
         editable_col = get_editable_column(revision, uploaded_pdf)
     
     if revision is None and uploaded_pdf is None:
@@ -100,7 +98,7 @@ def render_boxbuild():
             initial,
             departments,
             editable_col,
-            attendance_data,
+            member_plant,
             "PROJECT TEAM MEMBERS (PLANTS)",
             "plant"
         )
@@ -113,7 +111,7 @@ def render_boxbuild():
             initial,
             pcis_departments,
             editable_col,
-            attendance_data,
+            member_pcis,
             "PROJECT TEAM MEMBERS (PCIS)",
             "pcis"
         )
@@ -146,5 +144,4 @@ def render_boxbuild():
             file_name=filename,
             mime="application/pdf"
         )
-        st.write(parsed)
     
