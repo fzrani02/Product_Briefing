@@ -94,12 +94,16 @@ def extract_member_plant(lines):
 
                 parts = line.split()
 
-                if len(parts) >= 3:
+                email_index = next((i for i, p in enumerate(parts) if "@" in p), None)
+                
+                if email_index: 
+                    name = parts[email_index - 2]
+                    department = " ".join(parts[:email_index - 2])
 
                     member = {
-                        "department": parts[0],
-                        "name": parts[1],
-                        "email": parts[-2] if "@" in parts[-2] else "",
+                        "department": department,
+                        "name": name,
+                        "email": parts[email_index],
                         "M1": "✓" in line,
                         "M2": False,
                         "M3": False,
@@ -132,13 +136,17 @@ def extract_member_pcis(lines):
             if "Engineer" in line or "Manager" in line:
 
                 parts = line.split()
+                email_index = next((i for i, p in enumerate(parts) if "@" in p), None)
 
-                if len(parts) >= 2:
+
+                if email_index:
+                    name = parts[email_index - 1]
+                    department = " ".join(parts[:email_index - 1])
 
                     member = {
-                        "department": parts[0],
-                        "name": parts[1],
-                        "email": parts[-2] if "@" in parts[-2] else "",
+                        "department": department,
+                        "name": name,
+                        "email": parts[email_index],
                         "M1": "✓" in line,
                         "M2": False,
                         "M3": False,
