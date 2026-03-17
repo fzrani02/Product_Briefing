@@ -70,6 +70,9 @@ def render_boxbuild():
         for key, value in parsed["project_data"].items():
             st.session_state[key] = value
         st.write(parsed)
+        print(line)
+        print(parts)
+        print("dept:", department, "| name:", name)
 
         project_data.update(parsed["project_data"])
         member_plant = parsed["member_plant"]
