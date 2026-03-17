@@ -5,7 +5,7 @@ def render_project_form():
   col1, col2, col3 = st.columns(3)
   
   with col1:
-    project_name = st.text_input("Project Name")
+    project_name = st.text_input("Project Name", key="project_name")
     build_type = st.text_input("Build Type")
     date_updated = st.date_input("Date Updated", value=date.today())
 
