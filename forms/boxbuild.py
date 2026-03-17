@@ -15,11 +15,18 @@ from datetime import date
 from utils.database import load_database
 from utils.autosave import autosave
 
+def convert_to_dict(data_list):
+    result = {}
+    for item in data_list:
+        dept = item.get("department")
+        if dept:
+            result[dept] = item
+    return result
 
 def render_boxbuild():
-    member_plant = []
-    member_pcis = []
-    item_check = []
+    member_plant = {}
+    member_pcis = {}
+    item_check = {}
 
     render_header()
         
@@ -71,9 +78,9 @@ def render_boxbuild():
     
         parsed = parse_form(text)
         
-        member_plant = parsed.get("member_plant", [])
-        member_pcis = parsed.get("member_pcis",[])
-        item_check = parsed.get("item_check",[])
+        member_plant = convert_to_dict(parsed.get("member_plant", []))
+        member_pcis = convert_to_dict(parsed.get("member_pcis", []))
+        item_check = convert_to_dict(parsed.get("item_check",[]))
         
         for key, value in parsed["project_data"].items():
             st.session_state[key] = value
