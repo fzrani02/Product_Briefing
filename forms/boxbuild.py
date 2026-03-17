@@ -68,10 +68,16 @@ def render_boxbuild():
         text = read_pdf(uploaded_pdf)
     
         parsed = parse_form(text)
+
+        project_data = parsed["project_data"]
+        member_plant = parsed["member_plant"]
+        member_pcis = parsed["member_pcis"]
+        item_check = parsed["item_check"]
     
-        revision = parsed["revision"]
-    
-        attendance_data = parsed["attendance"]
+        revision = project_data.get("revision", "A")
+        
+        attendance_data = {}
+        
         editable_col = get_editable_column(revision, uploaded_pdf)
     
     if revision is None and uploaded_pdf is None:
@@ -140,4 +146,5 @@ def render_boxbuild():
             file_name=filename,
             mime="application/pdf"
         )
+        st.write(parsed)
     
