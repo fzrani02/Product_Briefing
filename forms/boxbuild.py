@@ -108,7 +108,6 @@ def render_boxbuild():
             initial,
             departments,
             editable_col,
-            member_plant,
             "PROJECT TEAM MEMBERS (PLANTS)",
             "plant"
         )
