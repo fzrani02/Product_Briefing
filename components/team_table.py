@@ -12,21 +12,14 @@ def render_team_table(df, initial, departments, editable_col, attendance_data, t
         justify-content:center;
         align-items: center;
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
     }
     
-    div[data-testid="stCheckbox"] > label {
-        width: fit-content;
-        padding-bottom: 0px;
-        margin: 0 auto;
+    div[data-testid="stCheckbox"] label {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        width: 100%;
     }
-
-    div[data-testid="stTextInput"], div[data-testid="stSelectbox"] {
-        margin-top:-5px;
-    }
-
-    
 
     </style>
     """, unsafe_allow_html=True)
@@ -47,7 +40,7 @@ def render_team_table(df, initial, departments, editable_col, attendance_data, t
         st.markdown("<h3 style='text-align: center;'>ATTENDANCES</h3>", unsafe_allow_html=True)
 
 
-        col1,col2,col3,col4 = st.columns(4)
+        col1,col2,col3,col4 = st.columns([1,1,1,1], gap="small")
 
         with col1:
             st.date_input("", key=f"{key_prefix}_mtg1", disabled=editable_col != 1, label_visibility="collapsed")
